@@ -39,3 +39,30 @@ ul.topnav li.right {
     text-align:center;
     padding:20px 0;
 }
+.software1box{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #000000;
+    background: #c7fadc;
+    border-bottom: solid 6px #aac5de;
+    border-radius: 9px;
+	width: 320px;
+height: 200px;
+margin: 10px auto;	
+padding:20px 0;
+}
+.software1box p {
+    margin: 0; 
+    padding: 0;
+}
+.download-launcher {
+	width: 130px;
+	height: 20px;
+	text-align: center;
+	padding: 10px 30px;
+	background-color: rgb(233, 200, 200);
+	display: block;
+	margin: 10px auto;	
+	text-decoration: none;
+	color: black;
+  }
