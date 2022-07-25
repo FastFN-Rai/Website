@@ -7,7 +7,7 @@
         <title>ソフトウェア - 雷さんのサイト</title>
         <link rel="stylesheet" href="software.css">
     </head>
-    <body>
+    <body onload="proc();">
         
         <ul class="topnav">
             　　<li><a href=index.html>ホーム</a></li>
@@ -21,8 +21,23 @@
             <div class="software1box">
                 <h2>UpLauncher</h2>
                 <p>簡単にUpLauncherプログラムをインストールすることができます。<br>※Windows でのみ利用可能です。</p>
-                <a href="UpLauncher-setup.exe" class="download-launcher">ダウンロードする</a>
+                <a  id="dl-launcher" href="UpLauncher-setup.exe" class="download-launcher">読み込み中...</a>
+                
         </div>
+        <script type="text/javascript">
+            function proc() {
+                var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.indexOf("windows nt 10.0") !== -1) {
+                console.log(ua.toString())
+                document.getElementById("dl-launcher").innerText = "ダウンロードする";
+               
+            }
+                else{
+                    document.getElementById("dl-launcher").innerText = "OSのサポートなし";
+                    document.getElementById("dl-launcher").classList.add("download-launcher-noplatform");
+                }   
+            }    
+        </script>
     </div>
     </body>
 </html>
