@@ -46,8 +46,8 @@ ul.topnav li.right {
     background: #effac7;
     border-bottom: solid 6px #aac5de;
     border-radius: 9px;
-	width: 320px;
-height: 200px;
+	width: 700px;
+height: 100px;
 margin: 10px auto;	
 padding:20px 0;
 }
@@ -55,27 +55,3 @@ padding:20px 0;
     margin: 0; 
     padding: 0;
 }
-.download-launcher {
-	width: 130px;
-	height: 20px;
-	text-align: center;
-	padding: 10px 30px;
-	background-color: rgb(233, 200, 200);
-	display: block;
-	margin: 10px auto;	
-	text-decoration: none;
-	color: black;
-  }
-  .download-launcher-noplatform {
-	width: 150px;
-	height: 20px;
-	text-align: center;
-	padding: 10px 30px;
-	background-color: rgb(83, 75, 75);
-	display: block;
-	margin: 10px auto;	
-	text-decoration: none;
-	color: rgb(255, 255, 255);
-	pointer-events: none;
-
-  }

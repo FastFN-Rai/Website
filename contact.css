@@ -46,8 +46,8 @@ ul.topnav li.right {
     background: #fae0c7;
     border-bottom: solid 6px #aac5de;
     border-radius: 9px;
-	width: 320px;
-height: 200px;
+	width: 500px;
+height: 220px;
 margin: 10px auto;	
 padding:20px 0;
 }
@@ -62,26 +62,11 @@ padding:20px 0;
 	padding: 10px 30px;
 	background-color: rgb(233, 200, 200);
 	display: block;
-	margin: 10px auto;	
+	margin: 10px;	
 	text-decoration: none;
 	color: black;
   }
-  .contact2box{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #000000;
-    background: #c7face;
-    border-bottom: solid 6px #aac5de;
-    border-radius: 9px;
-	width: 320px;
-height: 200px;
-margin: 10px auto;	
-padding:20px 0;
-}
-.contact2box p {
-    margin: 0; 
-    padding: 0;
-}
+
 .contact-twitter {
 	width: 160px;
 	height: 20px;
@@ -89,27 +74,13 @@ padding:20px 0;
 	padding: 10px 30px;
 	background-color: rgb(233, 200, 200);
 	display: block;
-	margin: 10px auto;	
+	margin-right: 20px;
+	margin-left: auto;
+	margin-top: -50px;
 	text-decoration: none;
 	color: black;
   }
-  .contact3box{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #000000;
-    background: #c7eefa;
-    border-bottom: solid 6px #aac5de;
-    border-radius: 9px;
-	width: 320px;
-height: 200px;
-margin: 10px auto;	
-padding:20px 0;
-
-}
-.contact3box p {
-    margin: 0; 
-    padding: 0;
-}
+ 
 .contact-mail {
 	width: 160px;
 	height: 20px;
