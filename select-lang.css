@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+body{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    transform:rotateZ(0.03deg);
+}
+.centertexts {
+    text-align:center;
+    padding:20px 0;
+}
+.select-button {
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	padding: 10px 30px;
+	background-color: rgb(233, 200, 200);
+	display: block;
+	margin: 10px auto;	
+	text-decoration: none;
+	color: black;
+  }
