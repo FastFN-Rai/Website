@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-　<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://www.raisandesu.com/" />
-<link rel="icon" type="image/png" href="/System64.png" sizes="64x64">  
-        <title>連絡 - 雷さんのサイト</title>
-        <link rel="stylesheet" href="contact.css">
-    </head>
-    <body>
-        
-        <ul class="topnav">
-            　　<li><a href=index.html>ホーム</a></li>
-            　　<li><a href="software.html">ソフトウェア</a></li>
-            　　<li><a class="active" href="contact.html">お問い合わせ</a></li>
-            　</ul>
 
-            <div class="centertexts"><h1>コンタクトページ</h1>
-            <p>雷に連絡したい場合は、ここに書いてあるDiscordやTwitter, メールに連絡してください。</p>
-        
-            <div class="contact1box">
-                <h2>手段を選択する</h2>
-                <p>UpLauncherへ連絡する手段を選択します。<br>Discordが推奨です。</p>
-                <a href="https://discord.gg/vxct9mrETR" class="contact-discord" target="_blank">サーバーに参加する</a>
-                <a href="https://twitter.com/raidesuuu" class="contact-twitter" target="_blank" align="right">Twitter</a>
-                <a href="mailto:contact@raisandesu.com?subject=お問い合わせ" class="contact-mail" target="_blank">メールアプリを開く</a>
-        </div>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="canonical" href="https://www.raisandesu.com/" />
+    <link rel="icon" href="https://www.raisandesu.com/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="menu/setup.js"></script>
+    <title>連絡 - 雷さんのサイト</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header></header>
+
+    <div class="centertexts">   
+        <div class="content">
+        <h1>コンタクトページ</h1>
+        <p>雷に連絡したい場合は、ここに書いてある連絡先に連絡してください。<br>
+        <strong>それ以外の方法ではご対応いたしかねます</strong></p>
+
+        <article class="message is-link" style="position: relative; left: 33.5%; width: 35%;">
+            <div class="message-header">
+              <p>連絡する</p>
+            </div>
+            <div class="message-body">
+                <p>雷へ連絡する手段を選択します。Discordが推奨です。</p>
+                <h4>推奨</h4>
+                <button onclick="window.open('https://discord.gg/PqUbFf7fyt', '_blank')" class="button is-primary">サーバーに参加する</button>
+                <button onclick="window.open('https://twitter.com/raidesuuu', '_blank')" class="button is-link">Twitter でDMを送信</button><br> <br>
+                <h4>利用不可</h4>
+                <button disabled class="button is-danger">メールを雷宛てに送信</button>
+            </div>
+          </article>
     </div>
-    </body>
+    </div>
+</body>
+
 </html>
