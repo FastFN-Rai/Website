@@ -1,44 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
-body{
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    transform:rotateZ(0.03deg);
+@import url(/css/dialog.css);
 
-	padding: 0;
-	margin: 0;	
-
+.menu {
+  background: #fafafa;
+  height: 100vh;
 }
-ul.topnav {
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	background-color: #e7ecf7;
+body {
+  padding: 0;
+  margin: 0;
 }
-ul.topnav li {
-	float: left;
+#google-signin {
+  transition: all 0.3s;
 }
-ul.topnav li a {
-	display: block;
-	padding: 14px 16px;
-	text-align: center;
-	text-decoration: none;
-	color: rgb(0, 0, 0);
-}
-ul.topnav li a:hover:not(.active) {
-	background-color: #d8dadd;
-}
-ul.topnav li a.active {
-	background-color: #a8dbdd;
-}
-ul.topnav li.right {
-	float: right;
-}
-@media screen and (max-width: 480px) {
-	ul.topnav li.right, ul.topnav li {
-		float: none;
-	}
+#google-signin:hover {
+  background: black;
+  color: white;
+  border-radius: 5px;
 }
 .centertexts {
-    text-align:center;
-    padding:20px 0;
+  text-align: center;
+  padding: 20px 0;
 }

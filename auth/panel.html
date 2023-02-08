@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="canonical" href="https://www.raisandesu.com/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="icon" href="/favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="/menu/setup.js" type="module"></script>
+
+    <title>雷さんのサイト</title>
+    <link rel="stylesheet" href="/css/index.css" />
+
+</head>
+
+<body>
+    <header></header><br>
+
+    <div class="content centertexts">
+        <h1>パネル</h1>
+        <p>
+            アカウントの情報
+        </p>
+        <h4>メールアドレス</h4>
+        <p>メールアドレスは、アカウントにログインする際に必要です。<br>
+        Google、もしくは GitHub でログインすることもできます。</p>
+        <p id="error-mail"></p>
+        <input class="input" id="cpass" type="password" style="width: 15%;" placeholder="パスワードを入力">
+        <input class="input" id="email" type="email" style="width: 15%;" placeholder="email@example.com"><br><br>
+        <button class="button is-primary" disabled id="changemail" style="margin-left: 20px;">メールアドレスを変更</button><br><br>
+
+
+
+        <h4>パスワード</h4>
+        <p>アカウントの安全のためにも、パスワードは<strong>誰にも公開しないでください。</strong><br>
+        パスワードを公開してしまった場合は、今すぐパスワードを変更してください。</p>
+        <p id="error-pass"></p>
+        <input class="input" id="cpass2" type="password" style="width: 15%;" placeholder="現在のパスワード"><br><br>
+        <input class="input" id="npass" type="password" style="width: 15%;" placeholder="新しいパスワード"><br><br>
+
+        <button id="changepass" class="button is-primary" disabled style="margin-left: 20px;">パスワードを変更</button><br><br>
+
+        <h3>破壊的な変更</h2><br>
+
+        <h4>2段階認証</h4>
+        <p>2段階認証は、ログインするときにパスワードと、認証コードまたはSMSに届いたコードを<br>
+        使用してログインします。そのため、大幅にセキュリティが向上します。<br>
+        <strong>注意: 現在利用不可</strong></p>
+
+        <button class="button is-danger" disabled style="margin-left: 20px;">2段階認証を有効にする</button><br><br>
+
+        <h4>アカウントを削除する</h4>
+        <p>アカウントが不要になった場合は、アカウントを削除することができます。<br>
+        パスワードと確認用のテキストボックスに<strong>「delete」</strong>と入れて削除します。</p>
+
+        <button onclick="document.getElementById('removeAccount').showModal()" class="button is-danger" style="margin-left: 20px;">アカウントを削除する</button><br><br>
+    </div>
+
+    <dialog id="removeAccount">
+        <h3 class="modal-header">アカウントを削除する</h3>
+        <div class="modal-body">
+            <p>アカウントを削除すると、すべてのアカウントデータが削除されます。<br>
+            このことを理解したら、パスワードとテキストボックスに<strong>「delete」</strong>と<br>
+            入力してください。</p><br>
+            <p id="error-rem"></p>
+
+            <p style="font-weight: bold">パスワード</p>
+            <input type="password" id="rempass" class="input" placeholder="パスワードを入力"><br>
+            <p style="font-weight: bold">「delete」と入力</p>
+            <input type="text" id="check" class="input" placeholder="delete">
+        </div>
+        <div class="modal-footer">
+            <button onclick="document.getElementById('removeAccount').close()" style="margin-right: 1vw;" class="button is-primary">キャンセル</button>
+            <button id="removeA" class="button is-danger" disabled>アカウントを削除</button>
+        </div>
+        <button onclick="document.getElementById('removeAccount').close()" class="close" type="button">&times;</button>
+    </dialog>
+
+    <footer></footer>
+
+    <script type="module" src="/js/firebase.js"></script>
+    <script type="module" src="/js/panel.js"></script>
+
+</body>
+
+</html>
