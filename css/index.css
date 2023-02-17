@@ -8,14 +8,6 @@ body {
   padding: 0;
   margin: 0;
 }
-#google-signin {
-  transition: all 0.3s;
-}
-#google-signin:hover {
-  background: black;
-  color: white;
-  border-radius: 5px;
-}
 .centertexts {
   text-align: center;
   padding: 20px 0;

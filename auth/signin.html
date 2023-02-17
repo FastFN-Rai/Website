@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="icon" href="/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <script src="/menu/setup.js" type="module"></script>
+    <script src="/menu/setup.js" type="module"></script>
 
     <title>雷さんのサイト</title>
     <link rel="stylesheet" href="/css/index.css" />
@@ -31,9 +31,28 @@
             <input class="input" id="pass" type="password" style="width: 15%;" placeholder="*********"><br><br>
 
             <hp>アカウントをお持ちではありませんか？<a href="/auth/signup.html">サインアップ</a></p>
-            <button id="signin" class="button is-primary" style="width: 10%;">サインイン</button><br><br>
 
-            <img id="google-signin" src="/images/auth/google-normal.png" style="width: 10%;">
+                <hr width="20%" style="margin: auto; background: rgb(146, 146, 146);"><br>または<br>
+                <br>
+                <button id="google-signin" class="button" style="width: 14%;">
+                    <img src=/images/auth/google-auth-logo.png style="margin: 0.8rem;" width="15%" height="10%">
+                    <span style="font-size: 20px; margin-bottom: 1%;">Google でサインイン</span>
+                </button>
+
+                <br><br>
+
+                <button id="github-signin" class="button" style="width: 14%;">
+                    <img src=/images/auth/github-auth-logo.png style="margin: 0.8rem;" width="15%" height="10%">
+                    <span style="font-size: 20px; margin-bottom: 1%;">GitHub でサインイン</span>
+                </button>
+
+                <br><br>
+
+                <button id="microsoft-signin" class="button" style="width: 14%;">
+                    <img src=/images/auth/microsoft-auth-logo.png style="margin: 0.8rem;" width="15%" height="10%">
+                    <span style="font-size: 20px; margin-bottom: 1%;">Microsoft でサインイン</span>
+                </button>
+
         </div>
     </div>
 

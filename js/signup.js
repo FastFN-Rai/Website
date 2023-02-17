@@ -4,6 +4,10 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase
 import {
   getAuth,
   onAuthStateChanged,
+  signInWithPopup,
+  signInWithRedirect,
+  OAuthProvider,
+  GithubAuthProvider,
   createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,6 +30,9 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 var gbutton = document.getElementById("google-signin");
+var ubutton = document.getElementById("github-signin");
+var mbutton = document.getElementById("microsoft-signin");
+
 var signup = document.getElementById("signup");
 
 var email = document.getElementById("email");
@@ -37,6 +44,47 @@ onAuthStateChanged(auth, (user) => {
         location.href = "/auth/panel.html";
     }
 })
+
+ubutton.onclick = () => {
+  const provider = new GithubAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      signInWithRedirect(auth, provider);
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+
+      document.getElementById("error-mess").textContent =
+        "エラー: " + errorMessage;
+    });
+};
+
+mbutton.onclick = () => {
+  const provider = new OAuthProvider("microsoft.com");
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      signInWithRedirect(auth, provider);
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+
+      document.getElementById("error-mess").textContent =
+        "エラー: " + errorMessage;
+    });
+};
+
+gbutton.onclick = () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      signInWithRedirect(auth, provider);
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+
+      document.getElementById("error-mess").textContent =
+        "エラー: " + errorMessage;
+    });
+};
 
 signup.onclick = () => {
   createUserWithEmailAndPassword(auth, email.value, pass.value)
