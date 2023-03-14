@@ -4,10 +4,41 @@
   background: #fafafa;
   height: 100vh;
 }
+
+button {
+  width: auto;
+}
+
+input.input {
+  width: auto;
+}
+
+article {
+  width: 45%;
+
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 430px) {
+  article {
+    width: 95%;
+  }
+}
+
+button.auth {
+  width: auto;
+
+  box-sizing: border-box;
+  padding: 15px 15px 15px 60px;
+  padding-top: auto;
+  text-align: center;
+}
+
 body {
   padding: 0;
   margin: 0;
 }
+
 .centertexts {
   text-align: center;
   padding: 20px 0;

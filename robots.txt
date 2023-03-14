@@ -1,0 +1,4 @@
+user-agent: *
+disallow: /auth/
+
+sitemap: https://www.raisandesu.com/sitemap.xml

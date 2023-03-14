@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="icon" href="/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
     <script src="/menu/setup.js" type="module"></script>
 
     <title>雷さんのサイト</title>
@@ -16,6 +17,7 @@
 </head>
 
 <body>
+
     <header></header>
 
     <div class="centertexts">
@@ -26,38 +28,41 @@
             </p>
             <p style="font-weight: bold;" id="error-mess"></p>
             <h4>メールアドレス</h4>
-            <input class="input" id="email" type="email" style="width: 15%;" placeholder="email@example.com"><br><br>
+            <input class="input" id="email" type="email" placeholder="email@example.com"><br><br>
             <h4>パスワード</h4>
-            <input class="input" id="pass" type="password" style="width: 15%;" placeholder="*********"><br><br>
+            <input class="input" id="password" type="password" placeholder="*********"><br><br>
 
-            <hp>アカウントをお持ちではありませんか？<a href="/auth/signup.html">サインアップ</a></p>
+            <div id="turnstile"></div><br>
 
-                <hr width="20%" style="margin: auto; background: rgb(146, 146, 146);"><br>または<br>
-                <br>
-                <button id="google-signin" class="button" style="width: 14%;">
-                    <img src=/images/auth/google-auth-logo.png style="margin: 0.8rem;" width="15%" height="10%">
-                    <span style="font-size: 20px; margin-bottom: 1%;">Google でサインイン</span>
-                </button>
+            <button id="signin" class="button is-primary" disabled>サインイン</button><br><br>
 
-                <br><br>
+            <p>アカウントをお持ちではありませんか？<a href="/auth/signup.html">サインアップ</a></p>
 
-                <button id="github-signin" class="button" style="width: 14%;">
-                    <img src=/images/auth/github-auth-logo.png style="margin: 0.8rem;" width="15%" height="10%">
-                    <span style="font-size: 20px; margin-bottom: 1%;">GitHub でサインイン</span>
-                </button>
+            <hr width="20%" style="margin: auto; background: rgb(146, 146, 146);"><br>または<br>
+            <br>
+            <button id="google-signin"
+                style="background: url(/images/auth/google-auth-logo.png) no-repeat 20px center / 30px auto;"
+                class="button auth">Google でサインイン
+            </button>
 
-                <br><br>
+            <br><br>
 
-                <button id="microsoft-signin" class="button" style="width: 14%;">
-                    <img src=/images/auth/microsoft-auth-logo.png style="margin: 0.8rem;" width="15%" height="10%">
-                    <span style="font-size: 20px; margin-bottom: 1%;">Microsoft でサインイン</span>
-                </button>
+            <button id="github-signin"
+                style="background: url(/images/auth/github-auth-logo.png) no-repeat 20px center / 30px auto;"
+                class="button auth">GitHub でサインイン
+            </button>
+
+            <br><br>
+
+            <button id="microsoft-signin"
+                style="background: url(/images/auth/microsoft-auth-logo.png) no-repeat 20px center / 30px auto;"
+                class="button auth">Microsoft でサインイン
+            </button>
 
         </div>
     </div>
 
     <footer></footer>
-
     <script type="module" src="/js/firebase.js"></script>
     <script type="module" src="/js/signin.js"></script>
 
