@@ -1,72 +1,75 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
 <nav class="navbar" role="navigation" aria-label="main navigation" style="background: rgb(219, 219, 219);">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="/favicon.ico" width="24" height="32">
+  <div class="navbar-brand">
+    <a aria-label="ホーム/雷さんのサイト  " class="navbar-item" href="/index.html">
+      <img alt="雷さんのサイト" src="/favicon.ico" width="24" height="32">
+    </a>
+
+    <a role="button" class="navbar-burger" data-target="navbar" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+
+
+  <div class="navbar-menu" id="navbar">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/index.html">
+        ホーム
       </a>
-  
-      <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+
+      <a class="navbar-item" href="/self-introduction.html">
+        自己紹介
       </a>
-    </div>
 
+      <a class="navbar-item" href="/product.html">
+        ソフトウェア
+      </a>
 
-  
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/index.html">
-          ホーム
-        </a>
-  
-        <a class="navbar-item" href="/self-introduction.html">
-          自己紹介
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          その他
         </a>
 
-        <a class="navbar-item" href="/product.html">
-          ソフトウェア
-        </a>
-  
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            その他
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://www.uplauncher.net">
+            UpLauncher
           </a>
-  
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://www.uplauncher.net">
-              UpLauncher
-            </a>
-            <a class="navbar-item" href="/contact.html">
-              連絡
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item" href="https://github.com/raisandesu/Website">
-                GitHub
-              </a>
-            <a class="navbar-item" href="https://github.com/raisandesu/Website/issues">
-              不具合を報告
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a id="signup" href="/auth/signup.html" class="button is-primary">
-              <strong>サインアップ</strong>
-            </a>
-            <a id="signin" href="/auth/signin.html" class="button is-light">
-              ログイン
-            </a>
-            <a id="panel" href="/auth/panel.html" class="button is-primary is-hidden">
-              パネル
-            </a>
-          </div>
+          <a class="navbar-item" href="/contact.html">
+            連絡
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="https://github.com/raisandesu/Website">
+            GitHub
+          </a>
+          <a class="navbar-item" href="https://github.com/raisandesu/Website/issues">
+            不具合を報告
+          </a>
         </div>
       </div>
     </div>
-  
-      <hr class="navbar-divider">   
-  </nav>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a id="signup" href="/auth/signup.html" class="button is-primary">
+            <strong>サインアップ</strong>
+          </a>
+          <a id="signin" href="/auth/signin.html" class="button is-light">
+            ログイン
+          </a>
+          <a id="panel" href="/auth/panel.html" class="button is-primary is-hidden">
+            パネル
+          </a>
+          <a id="logout" class="button is-light is-hidden">
+            ログアウト
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="navbar-divider">
+</nav>
