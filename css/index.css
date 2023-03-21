@@ -16,7 +16,8 @@ input.input {
 article {
   width: 45%;
 
-  margin: 0 auto;
+  text-align: center;
+  margin: auto;
 }
 
 @media screen and (max-width: 430px) {

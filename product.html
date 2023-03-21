@@ -9,7 +9,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="menu/setup.js" type="module"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
+
+  <script>
+    function downloadFile(url) {
+      window.open(url, '_self');
+    }
+  </script>
+
   <link rel="icon" href="/favicon.ico">
   <title>ソフトウェア - 雷さんのサイト</title>
   <link rel="stylesheet" href="css/index.css">
@@ -26,18 +33,33 @@
         <a href="https://uplauncher.net/product.html">このページから</a> UpLauncher アプリをダウンロードすることができます。
       </p>
     </div>
-    <article class="message is-success" style="position: relative; left: 33%; width: 35%;">
+    <article class="message is-success is-centered" style="width: 35%;">
       <div class="message-header">
         <p>acvm (Amazon Corretto Version Manager)</p>
-        <button class="delete" aria-label="delete"></button>
       </div>
       <div class="message-body">
-        <p>デスクトップ / コンソールで使用できる、Amazon Corretto Java のバージョンマネージャーです。
-          <br>コンソールは「acvm」を使用して操作することができます。<br>
+        <p>デスクトップ / コンソールで使用できる、Amazon Corretto Java のバージョンマネージャーです。<br>
+          コンソールは「acvm」を使用して操作することができます。
         </p>
         <a href="https://github.com/raisandesu/acvm">GitHub (raisandesu/acvm)</a> ||
         <a href="https://github.com/raisandesu/acvm/issues">GitHub / issues</a><br><br>
-        <button class="button is-link" disabled>acvm をダウンロード</button>
+        <button class="button is-link" onclick="downloadFile('/Software/acvm-installer-1.0.0.msi')">acvm
+          をダウンロード</button>
+      </div>
+    </article>
+
+    <article class="message is-success is-centered" style="width: 35%;">
+      <div class="message-header">
+        <p>ShareTheScreen</p>
+      </div>
+      <div class="message-body">
+        <p>
+          スクリーンショットを撮影することができるソフトウェアです。<br>
+          アクティブウインドウ、フルスクリーン、範囲指定などをする<br>
+          ことができます。
+        </p><br>
+        <button onclick="downloadFile('/Software/ShareTheScreen-setup.exe')" class="button is-link">ShareTheScreen
+          をダウンロード</button>
       </div>
     </article>
   </div>
