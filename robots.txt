@@ -1,4 +1,4 @@
 user-agent: *
 disallow: /auth/
 
-sitemap: https://www.raisandesu.com/sitemap.xml
+sitemap: https://rai.uplauncher.xyz/sitemap.xml

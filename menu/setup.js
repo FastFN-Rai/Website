@@ -5,34 +5,54 @@ import {
 
 var i = 0;
 
-$(function () {
-  $.ajaxSetup({ cache: false });
-  $("header").load("/menu/header.html");
+//includeHeader
+const headerRequest = new XMLHttpRequest();
+headerRequest.open("GET", "/menu/header.html", true);
+headerRequest.onreadystatechange = function () {
+  if (headerRequest.readyState === 4 && headerRequest.status === 200) {
+    const response = headerRequest.responseText;
+    const element = document.querySelector("header");
+    element.innerHTML = response;
 
-  $(document).ajaxComplete(function () {
-    i++;
-    if (i == 1) {
-      $(".navbar-burger").click(function () {
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        $(".navbar-burger").toggleClass("is-active");
-        $(".navbar-menu").toggleClass("is-active");
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user !== null) {
+        document.getElementById("signup").classList.add("is-hidden");
+        document.getElementById("signin").classList.add("is-hidden");
+        document.getElementById("panel").classList.remove("is-hidden");
+        document.getElementById("logout").classList.remove("is-hidden");
+  
+        document.getElementById("logout").addEventListener("click", () => {
+          auth.signOut();
+        });
+      }
+    });
+
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    $navbarBurgers.forEach(el => {
+      el.addEventListener('click', () => {
+
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
       });
-    }
-  });
+    });
+  }
+};
+headerRequest.send();
 
-  $("footer").load("/menu/footer.html");
-
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user !== null) {
-      document.getElementById("signup").classList.add("is-hidden");
-      document.getElementById("signin").classList.add("is-hidden");
-      document.getElementById("panel").classList.remove("is-hidden");
-      document.getElementById("logout").classList.remove("is-hidden");
-
-      document.getElementById("logout").addEventListener("click", () => {
-        auth.signOut();
-      });
-    }
-  });
-});
+//includeFooter
+const footerRequest = new XMLHttpRequest();
+footerRequest.open("GET", "/menu/footer.html", true);
+footerRequest.onreadystatechange = function () {
+  if (footerRequest.readyState === 4 && footerRequest.status === 200) {
+    const response = footerRequest.responseText;
+    const element = document.querySelector("footer");
+    element.innerHTML = response;
+  }
+};
+footerRequest.send();
