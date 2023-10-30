@@ -1,35 +1,21 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
-
 import {
   getAuth,
   onAuthStateChanged,
   signInWithPopup,
   signInWithRedirect,
-  OAuthProvider,
   GithubAuthProvider,
+  OAuthProvider,
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyADTVKgmIzCG96lLcE9Oi_pGk9Xu16RU1s",
-  authDomain: "raisansite.firebaseapp.com",
-  projectId: "raisansite",
-  storageBucket: "raisansite.appspot.com",
-  messagingSenderId: "783367233419",
-  appId: "1:783367233419:web:59b36177080fdd18b6198e",
-  measurementId: "G-X9FVTH9NQH",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 var signup = document.getElementById("signup");
+
+var googleSigninButton = document.getElementById("googleSignin");
+var githubSigninButton = document.getElementById("githubSignin");
+var microsoftSigninButton = document.getElementById("microsoftSignin");
 
 var email = document.getElementById("email");
 var pass = document.getElementById("pass");
@@ -41,13 +27,58 @@ onAuthStateChanged(auth, (user) => {
     }
 })
 
+githubSigninButton.onclick = () => {
+  const provider = new GithubAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      signInWithRedirect(auth, provider);
+    })
+    .catch((error) => {
+      const errorContent = error.message;
+
+      errorMessage.textContent = `エラー: ${errorContent}`;
+    });
+};
+
+microsoftSigninButton.onclick = () => {
+  const provider = new OAuthProvider("microsoft.com");
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      var credential = OAuthProvider.credentialFromResult(result);
+      var access_token = credential.accessToken;
+      var id_token = credential.idToken;
+      window.localStorage.setItem("access_token", access_token);
+      window.localStorage.setItem("id_token", id_token);
+
+      signInWithRedirect(auth, provider);
+    })
+    .catch((error) => {
+      const errorContent = error.message;
+
+      errorMessage.textContent = `エラー: ${errorContent}`;
+    });
+};
+
+googleSigninButton.addEventListener("click", () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      signInWithRedirect(auth, provider);
+    })
+    .catch((error) => {
+      const errorContent = error.message;
+
+      errorMessage.textContent = `エラー: ${errorContent}`;
+    });
+})
+
 signup.onclick = () => {
   createUserWithEmailAndPassword(auth, email.value, pass.value)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
       window.localStorage.setItem("email", user.email);
-      location.href = "/auth/panel.html";
+      window.location.href = "/auth/panel.html";
       // ...
     })
     .catch((error) => {

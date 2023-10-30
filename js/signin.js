@@ -8,12 +8,12 @@ import {
   GoogleAuthProvider,
 } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
-var googleSignin = document.getElementById("google-signin");
-var githubSignin = document.getElementById("github-signin");
-var microsoftSignin = document.getElementById("microsoft-signin");
+var googleSigninButton = document.getElementById("googleSignin");
+var githubSigninButton = document.getElementById("githubSignin");
+var microsoftSigninButton = document.getElementById("microsoftSignin");
 
 var signin = document.getElementById("signin");
-var errorText = document.getElementById("error-mess");
+var errorMessage = document.getElementById("errorMessage");
 
 var email = document.getElementById("email");
 var pass = document.getElementById("password");
@@ -36,20 +36,20 @@ window.onloadTurnstileCallback = function () {
 
 turnstile.ready(onloadTurnstileCallback);
 
-githubSignin.onclick = () => {
+githubSigninButton.onclick = () => {
   const provider = new GithubAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
       signInWithRedirect(auth, provider);
     })
     .catch((error) => {
-      const errorMessage = error.message;
+      const errorContent = error.message;
 
-      errorText.textContent = "エラー: " + errorMessage;
+      errorMessage.textContent = `エラー: ${errorContent}`;
     });
 };
 
-microsoftSignin.onclick = () => {
+microsoftSigninButton.onclick = () => {
   const provider = new OAuthProvider("microsoft.com");
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -62,43 +62,44 @@ microsoftSignin.onclick = () => {
       signInWithRedirect(auth, provider);
     })
     .catch((error) => {
-      const errorMessage = error.message;
+      const errorContent = error.message;
 
-      errorText.textContent = "エラー: " + errorMessage;
+      errorMessage.textContent = `エラー: ${errorContent}`;
     });
 };
 
-googleSignin.onclick = () => {
+googleSigninButton.addEventListener("click", () => {
+  const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
       signInWithRedirect(auth, provider);
     })
     .catch((error) => {
-      const errorMessage = error.message;
+      const errorContent = error.message;
 
-      errorText.textContent = "エラー: " + errorMessage;
+      errorMessage.textContent = `エラー: ${errorContent}`;
     });
-};
+})
 
 signin.onclick = () => {
   signInWithEmailAndPassword(auth, email.value, pass.value)
     .then((userCredential) => {
       console.log("Logined as " + userCredential.displayName + "!");
-      location.href = "/auth/panel.html";
+      window.location.href = "/auth/panel.html";
     })
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
+      const errorContent = error.message;
 
       if (errorCode == "auth/user-not-found") {
-        console.log("No user found!");
-        errorText.textContent = "ユーザーが見つかりませんでした。";
-      } else if ((errorCode = "auth/wrong-password")) {
-        console.log("wrong password!");
-        errorText.textContent = "パスワードが間違っています。";
+        console.error("No user found!");
+        errorMessage.textContent = "ユーザーが見つかりませんでした。";
+      } else if (errorCode == "auth/wrong-password") {
+        console.error("wrong password!");
+        errorMessage.textContent = "パスワードが間違っています。";
       } else {
-        console("other error: " + errorMessage);
-        errorText.textContent = "エラー: " + errorMessage;
+        console.error("other error: " + errorContent);
+        errorMessage.textContent = `エラー: ${errorContent}`;
       }
     });
 };

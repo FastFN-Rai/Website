@@ -3,13 +3,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebas
 
 //Firebase の設定
 const firebaseConfig = {
-    apiKey: "AIzaSyADTVKgmIzCG96lLcE9Oi_pGk9Xu16RU1s",
-    authDomain: "raisansite.firebaseapp.com",
-    projectId: "raisansite",
-    storageBucket: "raisansite.appspot.com",
-    messagingSenderId: "783367233419",
-    appId: "1:783367233419:web:59b36177080fdd18b6198e",
-    measurementId: "G-X9FVTH9NQH"
+    apiKey: "AIzaSyCkMWRtQsVjqe4XYDrvd37cFYGsXOgQ5sc",
+    authDomain: "auth.uplauncher.xyz",
+    projectId: "e-mediator-401323",
+    storageBucket: "e-mediator-401323.appspot.com",
+    messagingSenderId: "237760903684"
   };
 
 //Firebase を初期化する

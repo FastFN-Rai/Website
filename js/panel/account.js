@@ -22,6 +22,7 @@ var newPassword = document.getElementById("NewPassword");
 var passwordInfo = document.getElementById("InfoPassword");
 var changePassword = document.getElementById("ChangePassword");
 
+//アカウント削除
 var removePassword = document.getElementById("removePassword");
 var removeInfo = document.getElementById("InfoRemove");
 var removeAccount = document.getElementById("removeButton");
