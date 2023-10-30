@@ -16,6 +16,7 @@
 /* ツールチップのテキスト */
 .tooltip-text {
   opacity: 0; /* はじめは隠しておく */
+  z-index: 100;
   visibility: hidden; /* はじめは隠しておく */
   position: absolute; /* 絶対配置 */
   left: 50%; /* 親に対して中央配置 */
