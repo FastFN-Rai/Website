@@ -1,85 +1,88 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="雷さんが作成したサービスなどを公開します。"
+    />
+    <link rel="canonical" href="https://rai.uplauncher.xyz/" />
+    <script src="menu/setup.js" type="module"></script>
 
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="雷さんが作成したサービスなどを公開します。">
-  <link rel="canonical" href="https://rai.uplauncher.xyz/" />
-  <script src="menu/setup.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <script>
-    function downloadFile(url) {
-      window.open(url, '_self');
-    }
-  </script>
+    <script>
+      function downloadFile(url) {
+        window.open(url, "_self");
+      }
+    </script>
 
-  <link rel="icon" href="/favicon.ico">
-  <title>ソフトウェア - 雷さんのサイト</title>
-  <link rel="stylesheet" href="css/index.css">
-</head>
+    <link rel="icon" href="/favicon.ico" />
+    <title>ソフトウェア - 雷さんのサイト</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
 
-<body>
+  <body>
+    <header></header>
 
-  <header></header>
-
-  <div class="centertexts">
-    <div class="content">
-      <h1>ソフトウェアページ</h1>
-      <p>雷さんが作ったアプリを公開します。<strong>UpLauncher アプリは公開しません</strong>。<br>
-        <a href="https://uplauncher.net/product.html">このページから</a> UpLauncher アプリをダウンロードすることができます。
-      </p>
-    </div>
-    <article class="message is-success is-centered" style="width: 35%;">
-      <div class="message-header">
-        <p>acvm (Amazon Corretto Version Manager)</p>
-      </div>
-      <div class="message-body">
-        <p>デスクトップ / コンソールで使用できる、Amazon Corretto Java のバージョンマネージャーです。<br>
-          コンソールは「acvm」を使用して操作することができます。
-        </p>
-        <a href="https://github.com/raisandesu/acvm">GitHub (raisandesu/acvm)</a> ||
-        <a href="https://github.com/raisandesu/acvm/issues">GitHub / issues</a><br><br>
-        <button class="button is-link" onclick="downloadFile('/Software/acvm-installer-1.0.0.msi')">acvm
-          をダウンロード</button>
-      </div>
-    </article>
-
-    <article class="message is-success is-centered" style="width: 35%;">
-      <div class="message-header">
-        <p>VistaUpdater</p>
-      </div>
-      <div class="message-body">
-        <p>デスクトップ / コンソールで使用できる、Amazon Corretto Java のバージョンマネージャーです。<br>
-          コンソールは「acvm」を使用して操作することができます。
-        </p>
-        <a href="https://github.com/raisandesu/acvm">GitHub (raisandesu/acvm)</a> ||
-        <a href="https://github.com/raisandesu/acvm/issues">GitHub / issues</a><br><br>
-        <button class="button is-link" onclick="downloadFile('/Software/acvm-installer-1.0.0.msi')">acvm
-          をダウンロード</button>
-      </div>
-    </article>
-
-    <article class="message is-success is-centered" style="width: 35%;">
-      <div class="message-header">
-        <p>ShareTheScreen</p>
-      </div>
-      <div class="message-body">
+    <div class="centertexts">
+      <div class="content">
+        <h1>ソフトウェアページ</h1>
         <p>
-          スクリーンショットを撮影することができるソフトウェアです。<br>
-          アクティブウインドウ、フルスクリーン、範囲指定などをする<br>
-          ことができます。
-        </p><br>
-        <button onclick="downloadFile('/Software/ShareTheScreen-setup.exe')" class="button is-link">ShareTheScreen
-          をダウンロード</button>
+          雷さんが作ったアプリを公開します。<strong
+            >UpLauncher アプリは公開しません</strong
+          >。<br />
+          <a href="https://uplauncher.net/product.html">このページから</a>
+          UpLauncher アプリをダウンロードすることができます。
+        </p>
       </div>
-    </article>
-  </div>
 
-  <footer></footer>
+      <article class="message is-success is-centered" style="width: 35%">
+        <div class="message-header">
+          <p>VistaUpdater</p>
+        </div>
+        <div class="message-body">
+          <p>
+            Windows Vista / 7をワンクリックで更新する準備ができるツールです。<br />
+            Service Packやbit数を問わずにツールを使用できます。
+          </p>
+          <a href="https://github.com/vistaupdater/vistaupdater"
+            >GitHub (vistaupdater/vistaupdater)</a
+          >
+          ||
+          <a href="https://github.com/vistaupdater/vistaupdater/issues"
+            >GitHub / issues</a
+          ><br /><br />
+          <a class="button is-link" href="https://vistaupdater.net"
+            >VistaUpdaterをダウンロード&nbsp;<i class="bi bi-box-arrow-up-right"></i></a
+          >
+        </div>
+      </article>
 
-  <script src="/js/firebase.js" type="module"></script>
+      <article class="message is-success is-centered" style="width: 35%">
+        <div class="message-header">
+          <p>ShareTheScreen</p>
+        </div>
+        <div class="message-body">
+          <p>
+            スクリーンショットを撮影することができるソフトウェアです。<br />
+            アクティブウインドウ、フルスクリーン、範囲指定などをする<br />
+            ことができます。
+          </p>
+          <br />
+          <button
+            onclick="downloadFile('/Software/ShareTheScreen-setup.exe')"
+            class="button is-link"
+          >
+            ShareTheScreen をダウンロード
+          </button>
+        </div>
+      </article>
+    </div>
 
-</body>
+    <footer></footer>
 
+    <script src="/js/firebase.js" type="module"></script>
+  </body>
 </html>
