@@ -1,66 +1,102 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
+  <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="雷さんのサイトへようこそ！">
+    <meta name="description" content="雷さんのサイトへようこそ！" />
     <link rel="canonical" href="https://rai.uplauncher.xyz/" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
     <link rel="icon" href="/favicon.ico" />
     <script src="menu/setup.js" type="module"></script>
     <title>雷さんのサイト</title>
     <link rel="stylesheet" href="css/index.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header></header>
 
     <style>
-        span {
-            font-size: 3vw;
-        }
+      span {
+        font-size: 3vw;
+      }
     </style>
 
     <div class="content centertexts">
-        <h1>エイプリルフールまで</h1>        
+      <h1>エイプリルフールまで</h1>
+      <p>
+        このページはベータ版です。カウントダウンの練習をするために作りました。
+      </p>
+
+      <span id="day"></span>日 <span id="hour"></span>時間
+      <span id="min"></span>分 <span id="sec"></span>秒
+      <div class="rcs-center">
+        <pre class="rcs-code" style="width: 50%">
+<p style="color: orange">JS Code</p>
+const now = new Date();
+var date = new Date(now.getFullYear(), 4, 1, 0, 0, 0);
         
-        <span id="day"></span>日
-        <span id="hour"></span>時間
-        <span id="min"></span>分
-        <span id="sec"></span>秒
-        <script>
-            function countdown() {
-                const now = new Date();
-                var date = new Date(now.getFullYear(), 4, 1, 0, 0, 0);
-                
-                const fkdiffer = date.getTime() - now.getTime();
-                const fksec = Math.floor(fkdiffer / 1000) % 60;
-                
-                if (Math.sign(fksec) == -1) {
-                    date = new Date(now.getFullYear() + 1, 4, 1, 0, 0, 0);
-                }
-                const differ = date.getTime() - now.getTime();
+const fkdiffer = date.getTime() - now.getTime();
+const fksec = Math.floor(fkdiffer / 1000) % 60;
+        
+if (Math.sign(fksec) == -1) {
+    date = new Date(now.getFullYear() + 1, 4, 1, 0, 0, 0);
+}
+const differ = date.getTime() - now.getTime();
 
-                const sec = Math.floor(differ / 1000) % 60;
-                const min = Math.floor(differ / 1000 / 60) % 60;
-                const hour = Math.floor(differ / 1000 / 60 / 60) % 24;
-                const day = Math.floor(differ / 1000 / 60 / 60 / 24 );
+const sec = Math.floor(differ / 1000) % 60;
+const min = Math.floor(differ / 1000 / 60) % 60;
+const hour = Math.floor(differ / 1000 / 60 / 60) % 24;
+const day = Math.floor(differ / 1000 / 60 / 60 / 24 );
 
-                document.getElementById("day").textContent = String(day).padStart(2, "0");
-                document.getElementById("hour").textContent = String(hour).padStart(2, "0");
-                document.getElementById("min").textContent = String(min).padStart(2, "0")
-                document.getElementById("sec").textContent = String(sec).padStart(2, "0")
-                setTimeout(countdown, 1000);
-            }
-            countdown();
-        </script>
+console.log(`${day}日、${hour}時間、${min}分、${sec}秒`)
+</pre>
+      </div>
     </div>
 
     <footer></footer>
 
+    <script>
+      function countdown() {
+        const now = new Date();
+        var date = new Date(now.getFullYear(), 4, 1, 0, 0, 0);
+
+        const fkdiffer = date.getTime() - now.getTime();
+        const fksec = Math.floor(fkdiffer / 1000) % 60;
+
+        if (Math.sign(fksec) == -1) {
+          date = new Date(now.getFullYear() + 1, 4, 1, 0, 0, 0);
+        }
+        const differ = date.getTime() - now.getTime();
+
+        const sec = Math.floor(differ / 1000) % 60;
+        const min = Math.floor(differ / 1000 / 60) % 60;
+        const hour = Math.floor(differ / 1000 / 60 / 60) % 24;
+        const day = Math.floor(differ / 1000 / 60 / 60 / 24);
+
+        document.getElementById("day").textContent = String(day).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hour").textContent = String(hour).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("min").textContent = String(min).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("sec").textContent = String(sec).padStart(
+          2,
+          "0"
+        );
+        setTimeout(countdown, 1000);
+      }
+      countdown();
+    </script>
+
     <script src="/js/firebase.js" type="module"></script>
-
-</body>
-
+  </body>
 </html>

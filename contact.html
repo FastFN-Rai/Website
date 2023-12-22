@@ -1,48 +1,101 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rai.uplauncher.xyz/" />
-    <link rel="icon" href="/favicon.ico">
-    <script src="menu/setup.js" type="module"></script>
-    <title>連絡 - 雷さんのサイト</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
+    <link rel="icon" href="/favicon.ico" />
 
-<body>
+    <script src="menu/setup.js" type="module"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+
+    <title>連絡 - 雷さんのサイト</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
     <header></header>
 
     <div class="centertexts">
-        <div class="content">
-            <h1>コンタクトページ</h1>
-            <p>雷に連絡したい場合は、ここに書いてある連絡先に連絡してください。<br>
-                <strong>それ以外の方法ではご対応いたしかねます</strong>
-            </p>
+      <div class="content">
+        <h1>コンタクトページ</h1>
+        <p>
+          雷に連絡したい場合は、ここに書いてある連絡先に連絡してください。<br />
+        </p>
 
-            <article class="message is-link is-centered">
-                <div class="message-header">
-                    <p>連絡する</p>
-                </div>
-                <div class="message-body">
-                    <p>雷へ連絡する手段を選択します。Discordが推奨です。</p>
-                    <h4>推奨</h4>
-                    <button onclick="window.open('https://discord.gg/PqUbFf7fyt', '_blank')"
-                        class="button is-primary">サーバーに参加する</button>
-                    <button onclick="window.open('https://twitter.com/raidesuuu', '_blank')"
-                        class="button is-link">Twitter でDMを送信</button><br> <br>
-                    <h4>利用不可</h4>
-                    <button disabled class="button is-danger">メールを雷宛てに送信</button>
-                </div>
-            </article>
+        <h2>Discord</h2>
+        <p>まずは、Discordのサーバーへ参加してください。</p>
+        <a href="https://discord.gg/PqUbFf7fyt" class="button is-primary"
+          >サーバーに参加する</a
+        >
+
+        <div class="list-grid">
+          <ul>
+            <li>
+              雷さんのサービスの場合は、専用のサポートフォーラムを使用してください。
+            </li>
+            <li>
+              それ以外の連絡は、サポートと質問フォーラムで行ってください。
+            </li>
+            <li>
+              プライベートな連絡がしたい場合、チケットを作成してください。
+            </li>
+          </ul>
         </div>
+
+        <h2>X</h2>
+        <p>Xの場合は、ダイレクトメッセージを送信してください。</p>
+        <a href="https://x.com/raidesuuu" class="button is-link"
+          >Xのプロフィール
+        </a>
+
+        <div class="list-grid">
+          <ul>
+            <li>
+              フォローして、フォロバを待ってください。(フォロバ規約も読んでください)
+            </li>
+            <li>Xの場合は、反応が遅い場合があります。ご了承ください。</li>
+          </ul>
+        </div>
+
+        <h2>メール</h2>
+        <p id="contactMail">
+          メールアプリでメールを送信してください。<br />
+          メールアドレス: (スパム対策のため、Captchaを突破してください。)</p>
+        </p>
+        <button id="displayCaptcha" class="button is-primary">
+          Captchaを表示</button
+        ><br /><br />
+
+        <div id="turnstile"></div>
+
+        <p>
+          CaptchaはCloudflareにより提供されている「Turnstile」を使用しています。<br /><a
+            href="https://www.cloudflare.com/privacypolicy/"
+            >プライバシーポリシー。</a
+          >
+        </p>
+      </div>
     </div>
 
     <script src="/js/firebase.js" type="module"></script>
 
+    <script>
+      window.onloadTurnstileCallback = function () {
+        turnstile.render("#turnstile", {
+          sitekey: "0x4AAAAAAACYWAGYl5B5l4E9",
+          callback: function (token) {
+            document.querySelector("#contactMail").innerHTML = document.querySelector("#contactMail").innerHTML.replace("(スパム対策のため、Captchaを突破してください。)", "admin@uplauncher.xyz")
+          },
+        });
+      };
+      const displayCaptcha = document.querySelector("#displayCaptcha");
+      displayCaptcha.addEventListener("click", () => {
+        displayCaptcha.disabled = true;
+        turnstile.ready(onloadTurnstileCallback);
+      });
+    </script>
+
     <footer></footer>
-
-</body>
-
+  </body>
 </html>

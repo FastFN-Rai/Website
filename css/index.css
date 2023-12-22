@@ -1,5 +1,10 @@
 @import url(/css/dialog.css);
 
+/* Font Family */
+body {
+  font-family: "Noto Sans JP" !important;
+}
+
 /* Table Title */
 .table-title {
   font-weight: bold;
@@ -43,11 +48,47 @@
   color: black;
 }
 
+/* Verified Badge Text */
+.verified-badge-text {
+  padding: 10px 10px 10px 20px;
+
+  
+  background-image: url("/images/twitter-verified.svg");
+  background-position: right 30px center;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+}
+
+/* Roal.css for Rai Website */
+.rcs-code {
+  background-color: #333;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+
+  font-family: "Noto Sans JP";
+}
+
+.rcs-center {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+/* Zoom */
+.zoom:hover {
+  transform: scale(1.7)
+}
+
 /* List */
 .list-grid {
   text-align: center;
 }
 .list-grid ol {
+  text-align: left;
+  display: inline-block;
+}
+.list-grid ul {
   text-align: left;
   display: inline-block;
 }
