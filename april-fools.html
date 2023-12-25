@@ -11,7 +11,7 @@
     />
     <link rel="icon" href="/favicon.ico" />
     <script src="menu/setup.js" type="module"></script>
-    <title>雷さんのサイト</title>
+    <title>エイプリルフール | 雷さんのサイト</title>
     <link rel="stylesheet" href="css/index.css" />
   </head>
 
@@ -32,28 +32,6 @@
 
       <span id="day"></span>日 <span id="hour"></span>時間
       <span id="min"></span>分 <span id="sec"></span>秒
-      <div class="rcs-center">
-        <pre class="rcs-code" style="width: 50%">
-<p style="color: orange">JS Code</p>
-const now = new Date();
-var date = new Date(now.getFullYear(), 4, 1, 0, 0, 0);
-        
-const fkdiffer = date.getTime() - now.getTime();
-const fksec = Math.floor(fkdiffer / 1000) % 60;
-        
-if (Math.sign(fksec) == -1) {
-    date = new Date(now.getFullYear() + 1, 4, 1, 0, 0, 0);
-}
-const differ = date.getTime() - now.getTime();
-
-const sec = Math.floor(differ / 1000) % 60;
-const min = Math.floor(differ / 1000 / 60) % 60;
-const hour = Math.floor(differ / 1000 / 60 / 60) % 24;
-const day = Math.floor(differ / 1000 / 60 / 60 / 24 );
-
-console.log(`${day}日、${hour}時間、${min}分、${sec}秒`)
-</pre>
-      </div>
     </div>
 
     <footer></footer>
