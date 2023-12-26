@@ -150,7 +150,13 @@ body {
   color: white;
 }
 
-.firework-container > h1, h2 {
+.firework-container > h1 {
+  font-size: 40px !important;
+  color: white !important;
+}
+
+
+.firework-container > h2 {
   font-size: 40px !important;
   color: white !important;
 }
