@@ -1,73 +1,104 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
+  <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rai.uplauncher.xyz/" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
     <link rel="icon" href="/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
     <script src="/menu/setup.js" type="module"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
-        crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
+      crossorigin="anonymous"
+    ></script>
 
     <title>雷さんのサイト</title>
     <link rel="stylesheet" href="/css/index.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <header></header>
 
-    <div class="centertexts">
-        <div class="content">
-            <h1>サインイン</h1>
-            <p>
-                雷さんのサイトへサインインします。
-            </p>
-            <p style="font-weight: bold;" id="errorMessage"></p>
-            <h4>メールアドレス</h4>
-            <input class="input" id="email" type="email" placeholder="email@example.com"><br><br>
-            <h4>パスワード</h4>
-            <input class="input" id="password" type="password" placeholder="*********"><br><br>
+    <div class="content has-text-centered">
+      <h1>サインイン</h1>
+      <p>雷さんのサイトへサインインします。</p>
+      <p style="font-weight: bold" id="errorMessage"></p>
+      <h4>メールアドレス</h4>
+      <input
+        class="input"
+        id="email"
+        type="email"
+        placeholder="email@example.com"
+      /><br /><br />
+      <h4>パスワード</h4>
+      <input
+        class="input"
+        id="password"
+        type="password"
+        placeholder="*********"
+      /><br /><br />
 
-            <div id="turnstile"></div><br>
+      <div id="turnstile"></div>
+      <br />
 
-            <button id="signin" class="button is-primary" disabled>サインイン</button><br><br>
+      <button id="signin" class="button is-primary" disabled>サインイン</button
+      ><br /><br />
 
-            <p>アカウントをお持ちではありませんか？<a href="/auth/signup.html">サインアップ</a></p>
+      <p>
+        アカウントをお持ちではありませんか？<a href="/auth/signup.html"
+          >サインアップ</a
+        >
+      </p>
 
-            <hr width="20%" style="margin: auto; background: rgb(146, 146, 146);"><br>または<br>
-            <br>
-            <button id="googleSignin"
-                style="background: url(/images/auth/google-auth-logo.png) no-repeat 20px center / 30px auto;"
-                class="button auth">Google でサインイン
-            </button>
+      <hr width="20%" style="margin: auto; background: rgb(146, 146, 146)" />
+      <br />または<br />
+      <br />
+      <button
+        id="googleSignin"
+        style="
+          background: url(/images/auth/google-auth-logo.png) no-repeat 20px
+            center / 30px auto;
+        "
+        class="button auth"
+      >
+        Google でサインイン
+      </button>
 
-            <br><br>
+      <br /><br />
 
-            <button id="githubSignin"
-                style="background: url(/images/auth/github-auth-logo.png) no-repeat 20px center / 30px auto;"
-                class="button auth">GitHub でサインイン
-            </button>
+      <button
+        id="githubSignin"
+        style="
+          background: url(/images/auth/github-auth-logo.png) no-repeat 20px
+            center / 30px auto;
+        "
+        class="button auth"
+      >
+        GitHub でサインイン
+      </button>
 
-            <br><br>
+      <br /><br />
 
-            <button id="microsoftSignin"
-                style="background: url(/images/auth/microsoft-auth-logo.png) no-repeat 20px center / 30px auto;"
-                class="button auth">Microsoft でサインイン
-            </button>
-
-        </div>
+      <button
+        id="microsoftSignin"
+        style="
+          background: url(/images/auth/microsoft-auth-logo.png) no-repeat 20px
+            center / 30px auto;
+        "
+        class="button auth"
+      >
+        Microsoft でサインイン
+      </button>
     </div>
 
     <footer></footer>
     <script type="module" src="/js/firebase.js"></script>
     <script type="module" src="/js/signin.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -8,77 +8,80 @@
       content="雷さんが作成したサービスなどを公開します。"
     />
     <link rel="canonical" href="https://rai.uplauncher.xyz/" />
-    <script src="menu/setup.js" type="module"></script>
+    <script src="/menu/setup.js" type="module"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <script>
-      function downloadFile(url) {
-        window.open(url, "_self");
-      }
-    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
 
     <link rel="icon" href="/favicon.ico" />
     <title>ソフトウェア - 雷さんのサイト</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="/css/index.css" />
   </head>
 
   <body>
     <header></header>
 
-    <div class="centertexts">
-      <div class="content">
-        <h1>ソフトウェアページ</h1>
-        <p>
-          雷さんが作ったアプリを公開します。<strong
-            >UpLauncher アプリは公開しません</strong
-          >。<br />
-          <a href="https://uplauncher.net/product.html">このページから</a>
-          UpLauncher アプリをダウンロードすることができます。
-        </p>
+    <div class="content has-text-centered">
+      <h1>ソフトウェアページ</h1>
+      <p>
+        雷さんが作ったアプリを公開します。UpLauncherブランドのアプリも公開します。
+      </p><br>
+
+      <div class="columns is-centered products">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="https://vistaupdater.net/assets/vistaupdater.png"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">VistaUpdater</p>
+                <p class="subtitle is-6">2023年5月 ～ 現在</p>
+              </div>
+            </div>
+
+            <div class="content">
+              Windows Vista と Windows 7を簡単にアップデートするためのツールです。<br><br>
+              <a class="button is-link" href="https://vistaupdater.net">
+                ダウンロード&nbsp; <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="/images/bridder.png"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Bridder</p>
+                <p class="subtitle is-6">2023年8月 ～</p>
+              </div>
+            </div>
+
+            <div class="content">
+              Xアイコンから青い鳥へ戻します。文字も変更可能。<br><br>
+              <a class="button is-link" href="https://github.com/UpLauncher/Bridder">
+                GitHub&nbsp; <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <article class="message is-success is-centered" style="width: 35%">
-        <div class="message-header">
-          <p>VistaUpdater</p>
-        </div>
-        <div class="message-body">
-          <p>
-            Windows Vista / 7をワンクリックで更新する準備ができるツールです。<br />
-            Service Packやbit数を問わずにツールを使用できます。
-          </p>
-          <a href="https://github.com/vistaupdater/vistaupdater"
-            >GitHub (vistaupdater/vistaupdater)</a
-          >
-          ||
-          <a href="https://github.com/vistaupdater/vistaupdater/issues"
-            >GitHub / issues</a
-          ><br /><br />
-          <a class="button is-link" href="https://vistaupdater.net"
-            >VistaUpdaterをダウンロード&nbsp;<i class="bi bi-box-arrow-up-right"></i></a
-          >
-        </div>
-      </article>
-
-      <article class="message is-success is-centered" style="width: 35%">
-        <div class="message-header">
-          <p>ShareTheScreen</p>
-        </div>
-        <div class="message-body">
-          <p>
-            スクリーンショットを撮影することができるソフトウェアです。<br />
-            アクティブウインドウ、フルスクリーン、範囲指定などをする<br />
-            ことができます。
-          </p>
-          <br />
-          <button
-            onclick="downloadFile('/Software/ShareTheScreen-setup.exe')"
-            class="button is-link"
-          >
-            ShareTheScreen をダウンロード
-          </button>
-        </div>
-      </article>
     </div>
 
     <footer></footer>
