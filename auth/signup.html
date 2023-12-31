@@ -4,19 +4,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rai.uplauncher.xyz/" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
-    />
     <link rel="icon" href="/favicon.ico" />
+    <!--Turnstile Challenge-->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+    <!--JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="/menu/setup.js" type="module"></script>
+    <!--Ads by Google-->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
       crossorigin="anonymous"
     ></script>
+    <!--Header/Footer Setup-->
+    <script src="/menu/setup.js" type="module"></script>
+
     <title>雷さんのサイト</title>
+
+    <!--Load Stylesheet-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="/css/index.css" />
   </head>
 
@@ -40,58 +48,31 @@
       <h4>パスワード</h4>
       <input
         class="input"
-        id="pass"
+        id="password"
         type="password"
         style="width: 15%"
         placeholder="*********"
       /><br /><br />
 
-      <p>
-        アカウントをお持ちですか？<a href="/auth/signin.html">サインイン</a>
-      </p>
+      <div id="turnstile"></div>
+      <br />
+
       <button id="signup" class="button is-primary" style="width: 10%">
         サインアップ</button
       ><br /><br />
 
-      <hr width="20%" style="margin: auto; background: rgb(146, 146, 146)" />
-      <br />または<br />
-      <br />
-      <button
-        id="googleSignin"
-        style="
-          background: url(/images/auth/google-auth-logo.png) no-repeat 20px
-            center / 30px auto;
-        "
-        class="button auth"
-      >
-        Google でサインイン
-      </button>
+      <p>
+        アカウントをお持ちですか？<a href="/auth/signin.html">サインイン</a>
+      </p>
 
-      <br /><br />
-
-      <button
-        id="githubSignin"
-        style="
-          background: url(/images/auth/github-auth-logo.png) no-repeat 20px
-            center / 30px auto;
-        "
-        class="button auth"
-      >
-        GitHub でサインイン
-      </button>
-
-      <br /><br />
-
-      <button
-        id="microsoftSignin"
-        style="
-          background: url(/images/auth/microsoft-auth-logo.png) no-repeat 20px
-            center / 30px auto;
-        "
-        class="button auth"
-      >
-        Microsoft でサインイン
-      </button>
+      <article class="message">
+        <div class="message-body has-text-left">
+          <p>Google、GitHub、Microsoftのログイン/サインアップは無効になっています。<br>
+            そのため、Google、GitHub、Microsoftを使用してサインアップしているユーザーを削除しました。<br><br>
+          
+          ご理解のほどよろしくお願いいたします。</p>
+        </div>
+      </article>   
     </div>
 
     <footer></footer>

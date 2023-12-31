@@ -56,7 +56,7 @@
       <h1>2024年まで</h1>
       <p>
         このページはベータ版です。カウントダウンの練習をするために作りました。<br />
-        最終更新: 2023/12/25 (version 1.0)
+        最終更新: 2023/12/31 (version 1.1)
       </p>
 
       <h2 id="2024-alert">あと〇日。</h2>
@@ -110,11 +110,19 @@
         if (day != 0) {
           document.getElementById("2024-alert").textContent = `あと${day}日！`;
         } else if (hour != 0) {
-            document.getElementById("2024-alert").textContent = `あと${hour}時間！`;
+          if (35 < min) {
+            document.getElementById("2024-alert").textContent = `あと${
+              hour + 1
+            }時間！`;
+          } else {
+            document.getElementById(
+              "2024-alert"
+            ).textContent = `あと${hour}時間！`;
+          }
         } else if (min != 0) {
-            document.getElementById("2024-alert").textContent = `あと${min}分！`;
+          document.getElementById("2024-alert").textContent = `あと${min}分！`;
         } else {
-            document.getElementById("2024-alert").textContent = `あと${sec}秒！`;
+          document.getElementById("2024-alert").textContent = `あと${sec}秒！`;
         }
 
         if (Math.sign(fksec) == -1) {

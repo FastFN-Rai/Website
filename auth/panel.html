@@ -1,86 +1,150 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
+  <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rai.uplauncher.xyz/" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
     <link rel="icon" href="/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="/menu/setup.js" type="module"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
-     crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
+      crossorigin="anonymous"
+    ></script>
     <title>雷さんのサイト</title>
     <link rel="stylesheet" href="/css/index.css" />
+  </head>
 
-</head>
-
-<body>
-    <header></header><br>
+  <body>
+    <header></header>
+    <br />
 
     <div class="content has-text-centered">
-        <h1>パネル</h1>
-        <p>アカウントの情報</p>
-        <h4>メールアドレス</h4>
-        <p>メールアドレスは、アカウントにログインする際に必要です。<br>
-            Google、もしくは GitHub でログインすることもできます。</p>
-        <p id="InfoEmail"></p>
-        <input class="input" id="EmailPassword" type="password" style="width: 15%;" placeholder="パスワードを入力">
-        <input class="input" id="NewEmail" type="email" style="width: 15%;" placeholder="email@example.com"><br><br>
-        <button class="button is-primary" id="ChangeEmail">メールアドレスを変更</button><br><br>
+      <h1>パネル</h1>
+      <p>アカウントの情報</p>
+      <h4>メールアドレス</h4>
+      <p>メールアドレスは、アカウントにログインする際に必要です。</p>
+      <p id="email_info"></p>
+      <input
+        class="input"
+        id="email_password"
+        type="password"
+        style="width: 15%"
+        placeholder="パスワードを入力"
+      />
+      <input
+        class="input"
+        id="email_new"
+        type="email"
+        style="width: 15%"
+        placeholder="email@example.com"
+      /><br /><br />
+      <button class="button is-primary" id="email_submit">
+        メールアドレスを変更</button
+      ><br /><br />
 
-        <h4>パスワード</h4>
-        <p>アカウントの安全のためにも、パスワードは<strong>誰にも公開しないでください。</strong><br>
-            パスワードを公開してしまった場合は、今すぐパスワードを変更してください。</p>
-        <p id="InfoPassword"></p>
-        <input class="input" id="currentPassword" type="password" style="width: 15%;" placeholder="現在のパスワード"><br><br>
-        <input class="input" id="NewPassword" type="password" style="width: 15%;" placeholder="新しいパスワード"><br><br>
+      <h4>パスワード</h4>
+      <p>
+        アカウントの安全のためにも、パスワードは<strong
+          >誰にも公開しないでください。</strong
+        ><br />
+        パスワードを公開してしまった場合は、今すぐパスワードを変更してください。
+      </p>
+      <p id="password_info"></p>
+      <input
+        class="input"
+        id="password_current"
+        type="password"
+        style="width: 15%"
+        placeholder="現在のパスワード"
+      /><br /><br />
+      <input
+        class="input"
+        id="password_new"
+        type="password"
+        style="width: 15%"
+        placeholder="新しいパスワード"
+      /><br /><br />
 
-        <button id="ChangePassword" class="button is-primary" disabled>パスワードを変更</button><br><br>
+      <button id="password_submit" class="button is-primary" disabled>
+        パスワードを変更</button
+      ><br /><br />
 
-        <h3>破壊的な変更</h2><br>
+      <h2>破壊的な変更</h2>
+      <br />
 
-            <h4>2段階認証</h4>
-            <p>2段階認証は、ログインするときにパスワードと、認証コードまたはSMSに届いたコードを<br>
-                使用してログインします。そのため、大幅にセキュリティが向上します。<br>
-                <strong>注意: 現在利用不可</strong>
-            </p>
+      <h4>2段階認証</h4>
+      <p>
+        2段階認証は、ログインするときにパスワードと、認証コードまたはSMSに届いたコードを<br />
+        使用してログインします。そのため、大幅にセキュリティが向上します。<br />
+        <strong>注意: 現在利用不可</strong>
+      </p>
 
-            <button class="button is-danger" disabled>2段階認証を有効にする</button><br><br>
+      <button class="button is-danger" disabled>2段階認証を有効にする</button
+      ><br /><br />
 
-            <h4>アカウントを削除する</h4>
-            <p>アカウントが不要になった場合は、アカウントを削除することができます。<br>
-                パスワードと確認用のテキストボックスに<strong>「delete」</strong>と入れて削除します。</p>
+      <h4>アカウントを削除する</h4>
+      <p>
+        アカウントが不要になった場合は、アカウントを削除することができます。<br />
+        パスワードと確認用のテキストボックスに<strong>「delete」</strong>と入れて削除します。
+      </p>
 
-            <button onclick="location.href='/contact.html'" id="contact" class="button is-danger">削除するには連絡</button>
-            <button id="startRemoveAccount" onclick="document.getElementById('removeAccount').showModal()"
-                class="button is-danger">アカウントを削除する</button><br><br>
+      <button
+        onclick="document.getElementById('remove_dialog').showModal()"
+        class="button is-danger"
+      >
+        アカウントを削除する</button
+      ><br /><br />
     </div>
 
-    <dialog id="removeAccount">
-        <h3 class="modal-header">アカウントを削除する</h3>
-        <div class="modal-body">
-            <p>アカウントを削除すると、すべてのアカウントデータが削除されます。<br>
-                このことを理解したら、パスワードを入力してください。</p><br>
-            <p id="InfoRemove"></p>
+    <dialog id="remove_dialog">
+      <h3 class="modal-header">アカウントを削除する</h3>
+      <div class="modal-body content">
+        <p>アカウントを削除すると、すべてのアカウントデータが削除されます。</p>
+        <ul>
+          <li>雷の画像投稿サービスでのすべてのデータ</li>
+          <li>雷のウェブサイト上でのプレミアム特典</li>
+        </ul>
+        <p>どんな場合でも、プレミアムの返金は受け付けておりません。<br>アカウント削除の操作は元に戻せません。</p>
+        <p id="remove_info"></p>
 
-            <p style="font-weight: bold">パスワード</p>
-            <input type="password" id="removePassword" class="input" placeholder="パスワードを入力"><br>
-        </div>
-        <div class="modal-footer">
-            <button onclick="document.getElementById('removeAccount').close()" style="margin-right: 1vw;"
-                class="button is-primary">キャンセル</button>
-            <button id="removeButton" class="button is-danger" disabled>アカウントを削除</button>
-        </div>
-        <button onclick="document.getElementById('removeAccount').close()" class="close" type="button">&times;</button>
+        <p style="font-weight: bold">パスワード</p>
+        <input
+          type="password"
+          id="remove_password"
+          class="input"
+          placeholder="パスワードを入力"
+        /><br />
+      </div>
+      <div class="modal-footer">
+        <button
+          onclick="document.getElementById('remove_dialog').close()"
+          style="margin-right: 1vw"
+          class="button is-primary"
+        >
+          キャンセル
+        </button>
+        <button id="remove_submit" class="button is-danger" disabled>
+          アカウントを削除
+        </button>
+      </div>
+      <button
+        onclick="document.getElementById('remove_dialog').close()"
+        class="close"
+        type="button"
+      >
+        &times;
+      </button>
     </dialog>
 
     <footer></footer>
     <script type="module" src="/js/firebase.js"></script>
     <script type="module" src="/js/panel/main.js"></script>
     <script type="module" src="/js/panel/account.js"></script>
-
-</body>
-
+  </body>
 </html>

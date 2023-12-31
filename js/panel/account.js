@@ -1,169 +1,122 @@
-//Firebase Auth を読み込む
 import {
   getAuth,
   onAuthStateChanged,
   EmailAuthProvider,
   updateEmail,
+  deleteUser,
   reauthenticateWithCredential,
 } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-
-//認証するために必要
 const auth = getAuth();
 
-//メール変更 (変数)
-var emailPassword = document.getElementById("EmailPassword");
-var emailNew = document.getElementById("NewEmail");
-var emailButton = document.getElementById("ChangeEmail");
-var emailInfo = document.getElementById("InfoEmail");
+let email = "";
 
-//パスワード変更 (変数)
-var currentPassword = document.getElementById("currentPassword");
-var newPassword = document.getElementById("NewPassword");
-var passwordInfo = document.getElementById("InfoPassword");
-var changePassword = document.getElementById("ChangePassword");
+const email_password = document.getElementById("email_password");
+const email_new = document.getElementById("email_new");
+const email_info = document.getElementById("email_info");
+const email_submit = document.getElementById("email_submit");
 
-//アカウント削除
-var removePassword = document.getElementById("removePassword");
-var removeInfo = document.getElementById("InfoRemove");
-var removeAccount = document.getElementById("removeButton");
+const password_current = document.getElementById("password_current");
+const password_new = document.getElementById("password_new");
+const password_info = document.getElementById("password_info");
+const password_submit = document.getElementById("password_submit");
 
-//認証サーバーに接続出来たら
+const remove_password = document.getElementById("remove_password");
+const remove_info = document.getElementById("remove_info");
+const remove_submit = document.getElementById("remove_submit");
+
 onAuthStateChanged(auth, (user) => {
-  //メールアドレス関係
-  //パスワードを入力したときにボタンを有効にする
-  emailPassword.addEventListener("change", () => {
-    if ((!emailPassword.value == "") & (!emailNew.value == "")) {
-      //ボタンを有効にする
-      emailButton.removeAttribute("disabled");
+  email = user.email;
+  console.log(user.email);
+
+  email_password.addEventListener("change", () => {
+    if ((!email_password.value == "") & (!email_new.value == "")) {
+      email_submit.removeAttribute("disabled");
     } else {
-      //ボタンを無効にする
-      emailButton.setAttribute("disabled", true);
+      email_submit.setAttribute("disabled", true);
     }
   });
-
-  //メールアドレスを入力したときにボタンを有効にする
-  emailNew.addEventListener("change", () => {
-    if ((!emailPassword.value == "") & (!emailNew.value == "")) {
-      //ボタンを有効にする
-      emailButton.removeAttribute("disabled");
+  email_new.addEventListener("change", () => {
+    if ((!email_password.value == "") & (!email_new.value == "")) {
+      email_submit.removeAttribute("disabled");
     } else {
-      //ボタンを無効にする
-      emailButton.setAttribute("disabled", true);
+      email_submit.setAttribute("disabled", true);
     }
   });
-
-  //メールアドレス変更ボタンを押したとき
-  emailButton.addEventListener("click", async () => {
-    //資格情報を作成
-    var userCredential = EmailAuthProvider.credential(
+  email_submit.addEventListener("click", async () => {
+    const userCredential = EmailAuthProvider.credential(
       user.email,
-      emailPassword
+      email_password
     );
-
-    //ユーザーを資格情報で再認証
     reauthenticateWithCredential(user, userCredential)
       .then(() => {
-        //メールアドレスを更新する
-        updateEmail(user, emailNew.value)
+        updateEmail(user, email_new.value)
           .then(() => {
-            //メールアドレスの変更に成功した時
-            emailInfo.textContent =
-              'メールアドレスが、"' + emailNew.value + '" に変更されました。  ';
+            email_info.textContent = "メールアドレスを変更しました。";
           })
           .catch((error) => {
-            //メールアドレスの変更に失敗した時
-            emailInfo.textContent = "エラー: " + error;
+            email_info.textContent = "エラー: " + error;
           });
       })
       .catch((error) => {
-        //資格情報が間違っているときなど
-        emailInfo.textContent = "エラー: パスワードが違います。";
+        email_info.textContent = "エラー: パスワードが違います。";
         return;
       });
   });
-
-  //パスワード関係
-  //パスワード変更ボタンを押したとき
-  changePassword.addEventListener("click", () => {
-    //資格情報を作成
+  password_submit.addEventListener("click", () => {
     const credential = EmailAuthProvider.credential(user.email, passP.value);
-
-    //ユーザーを資格情報で再認証
     reauthenticateWithCredential(user, credential)
       .then(() => {
-        //パスワードを更新する
         updatePassword(user, passN.value)
           .then(() => {
-            //パスワードの変更に成功した時
-            passwordInfo.textContent = "パスワードが変更されました。";
+            password_info.textContent = "パスワードが変更されました。";
           })
           .catch((error) => {
-            //パスワードの変更に失敗した時
-            passwordInfo.textContent = "エラー: " + error;
+            password_info.textContent = "エラー: " + error;
           });
       })
       .catch((error) => {
-        //資格情報が間違っているときなど
-        passwordInfo.textContent = "エラー: パスワードが違います。";
+        password_info.textContent = "エラー: パスワードが違います。";
         return;
       });
   });
 
-  //新しいパスワードを入力したときにボタンを有効にする
-  newPassword.addEventListener("change", () => {
-    if ((!newPassword.value == "") & (!currentPassword.value == "")) {
-      //ボタンを有効にする
-      changePassword.removeAttribute("disabled");
+  password_new.addEventListener("change", () => {
+    if ((!password_new.value == "") & (!password_current.value == "")) {
+      password_submit.removeAttribute("disabled");
     } else {
-      //ボタンを無効にする
-      changePassword.setAttribute("disabled", true);
+      password_submit.setAttribute("disabled", true);
+    }
+  });
+  password_current.addEventListener("change", () => {
+    if ((!password_new.value == "") & (!password_current.value == "")) {
+      password_submit.removeAttribute("disabled");
+    } else {
+      password_submit.setAttribute("disabled", true);
     }
   });
 
-  //現在のパスワードを入力したときにボタンを有効にする
-  currentPassword.addEventListener("change", () => {
-    if ((!newPassword.value == "") & (!currentPassword.value == "")) {
-      //ボタンを有効にする
-      changePassword.removeAttribute("disabled");
+  remove_password.addEventListener("change", () => {
+    if (!remove_password.value == "") {
+      remove_submit.removeAttribute("disabled");
     } else {
-      //ボタンを無効にする
-      changePassword.setAttribute("disabled", true);
+      remove_submit.setAttribute("disabled", true);
     }
   });
-
-  //アカウント削除関係
-  //パスワードを入力したときにボタンを有効にする
-  removePassword.addEventListener("change", () => {
-    if (!removePassword.value == "") {
-      //ボタンを有効にする
-      removeAccount.removeAttribute("disabled");
-    } else {
-      //ボタンを無効にする
-      removeAccount.setAttribute("disabled", true);
-    }
-  });
-
-  removeAccount.addEventListener("click", () => {
-    //資格情報を作成
-    const credential = EmailAuthProvider.credential(email, removePassword);
-
-    //ユーザーを資格情報で再認証
+  remove_submit.addEventListener("click", () => {
+    const credential = EmailAuthProvider.credential(email, remove_password.value);
     reauthenticateWithCredential(user, credential)
       .then(() => {
-        //アカウントを削除する
         deleteUser(user)
           .then(() => {
-            //アカウントの削除に成功した時
             location.href = "/auth/signin.html";
           })
           .catch((error) => {
-            //アカウントの削除に失敗した時
-            removeInfo.textContent = "エラー: " + error;
+            remove_info.textContent = "エラー: " + error;
           });
       })
       .catch((error) => {
-        //資格情報が間違っているときなど
-        removeInfo.textContent = "エラー: パスワードが違います。";
+        console.log("Error: " + error.message)
+        remove_info.textContent = "エラー: パスワードが違います。";
         return;
       });
   });
