@@ -1,7 +1,7 @@
 import {
   getAuth,
   onAuthStateChanged,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
 var signin = document.getElementById("signin");
@@ -21,7 +21,7 @@ window.onloadTurnstileCallback = function () {
   turnstile.render("#turnstile", {
     sitekey: "0x4AAAAAAACYWAGYl5B5l4E9",
     callback: function (token) {
-      signin.removeAttribute("disabled")
+      signin.removeAttribute("disabled");
     },
   });
 };
@@ -41,6 +41,10 @@ signin.onclick = () => {
         errormessage.textContent = "ユーザーが見つかりませんでした。";
       } else if (errorCode == "auth/wrong-password") {
         errormessage.textContent = "パスワードが間違っています。";
+      } else if (errorCode == "auth/multi-factor-auth-required") {
+        window.sessionStorage.setItem("email", email.value);
+        window.sessionStorage.setItem("password", password.value);
+        window.location.href = "/auth/tfa-auth.html"
       } else {
         errormessage.textContent = `エラー: ${errorContent}`;
       }

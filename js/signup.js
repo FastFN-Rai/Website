@@ -32,7 +32,7 @@ signup.addEventListener("click", () => {
     .then((userCredential) => {
       const user = userCredential.user;
       window.localStorage.setItem("email", user.email);
-      window.location.href = "/auth/panel.html";
+      window.location.href = "/auth/panel.html?email-verify=1";
     })
     .catch((error) => {
       const errorcode = error.code;

@@ -27,7 +27,16 @@
     <div class="content has-text-centered">
       <h1>パネル</h1>
       <p>アカウントの情報</p>
-      <h4>メールアドレス</h4>
+
+      <article class="message" style="display: none">
+        <div class="message-body has-text-left">
+          <p>
+            メールアドレスを認証してください。あなたのメールアドレスにリンクを送信しました。
+          </p>
+        </div>
+      </article>
+
+      <h2>メールアドレス</h2>
       <p>メールアドレスは、アカウントにログインする際に必要です。</p>
       <p id="email_info"></p>
       <input
@@ -48,7 +57,7 @@
         メールアドレスを変更</button
       ><br /><br />
 
-      <h4>パスワード</h4>
+      <h2>パスワード</h2>
       <p>
         アカウントの安全のためにも、パスワードは<strong
           >誰にも公開しないでください。</strong
@@ -82,11 +91,20 @@
       <p>
         2段階認証は、ログインするときにパスワードと、認証コードまたはSMSに届いたコードを<br />
         使用してログインします。そのため、大幅にセキュリティが向上します。<br />
-        <strong>注意: 現在利用不可</strong>
+        <strong
+          >現在はベータ版です。ロックアウトされた場合は、連絡してください。</strong
+        >
       </p>
 
-      <button class="button is-danger" disabled>2段階認証を有効にする</button
+      <button class="button is-danger" id="2fa_enable">
+        2段階認証を有効にする</button
       ><br /><br />
+
+      <article class="message is-warning">
+        <div class="message-body has-text-left">
+          <p>現在、2段階認証を無効にすることはできません。無効にするには、<a href="/contact.html">連絡してください。</a>
+        </div>
+      </article>    
 
       <h4>アカウントを削除する</h4>
       <p>
@@ -110,7 +128,9 @@
           <li>雷の画像投稿サービスでのすべてのデータ</li>
           <li>雷のウェブサイト上でのプレミアム特典</li>
         </ul>
-        <p>どんな場合でも、プレミアムの返金は受け付けておりません。<br>アカウント削除の操作は元に戻せません。</p>
+        <p>
+          どんな場合でも、プレミアムの返金は受け付けておりません。<br />アカウント削除の操作は元に戻せません。
+        </p>
         <p id="remove_info"></p>
 
         <p style="font-weight: bold">パスワード</p>
@@ -135,6 +155,64 @@
       </div>
       <button
         onclick="document.getElementById('remove_dialog').close()"
+        class="close"
+        type="button"
+      >
+        &times;
+      </button>
+    </dialog>
+
+    <dialog id="2fa_dialog">
+      <h3 class="modal-header">2段階認証(2FA)を有効にする</h3>
+      <div class="modal-body content">
+        <p>
+          2段階認証を有効にすると、サインインのときにSMSでワンタイムパスワードを受け取ります。<br />
+          そのため、大幅にセキュリティが向上します。その代わり、ロックアウトされる危険性があります。<br />
+          2段階認証を有効にした電話番号を変更する際は、一旦2段階認証を無効にしましょう。
+        </p>
+        <p id="2fa_info"></p>
+
+        <div id="recaptcha_container"></div>
+
+        <p style="font-weight: bold">パスワード</p>
+        <input
+          type="password"
+          id="2fa_password"
+          class="input"
+          placeholder="パスワードを入力"
+        />
+        <input
+          type="tel"
+          id="2fa_phonenumber"
+          class="input"
+          placeholder="電話番号"
+        /><br /><br />
+        <button id="2fa_sendcode" class="button is-primary">
+          コードを送信
+        </button>
+
+        <input
+          type="text"
+          id="2fa_verificationcode"
+          class="input"
+          disabled
+          placeholder="認証コード"
+        />
+      </div>
+      <div class="modal-footer">
+        <button
+          onclick="document.getElementById('2fa_dialog').close()"
+          style="margin-right: 1vw"
+          class="button is-primary"
+        >
+          キャンセル
+        </button>
+        <button id="2fa_submit" class="button is-primary" disabled>
+          コードを確認して2段階認証を有効にする
+        </button>
+      </div>
+      <button
+        onclick="document.getElementById('2fa_dialog').close()"
         class="close"
         type="button"
       >
