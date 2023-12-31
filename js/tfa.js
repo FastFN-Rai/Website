@@ -76,6 +76,7 @@ onAuthStateChanged(auth, (user) => {
     tfa_resolver.resolveSignIn(multiFactorAssertion).then((userCredentials) => {
         document.querySelector("article").style.display = "";
         window.sessionStorage.clear();
+        window.localStorage.setItem("tfa_enabled", true)
         window.location.href = "/auth/panel.html"
     });
   });

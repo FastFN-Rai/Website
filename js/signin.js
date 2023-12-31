@@ -31,6 +31,7 @@ turnstile.ready(onloadTurnstileCallback);
 signin.onclick = () => {
   signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
+      window.localStorage.remove("tfa_enabled")
       window.location.href = "/auth/panel.html";
     })
     .catch((error) => {
