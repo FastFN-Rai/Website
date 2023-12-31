@@ -41,16 +41,22 @@ const remove_submit = document.getElementById("remove_submit");
 onAuthStateChanged(auth, (user) => {
   const urlParams = new URLSearchParams(window.location.search);
 
-  console.log("User Details:\nEmail: ", user.email, "\nEmail Verified: ", user.emailVerified, "\n2FA Enabled: ", window.localStorage.getItem("tfa_enabled"))
-  
+  console.log(
+    "User Details:\nEmail: ",
+    user.email,
+    "\nEmail Verified: ",
+    user.emailVerified,
+    "\n2FA Enabled: ",
+    window.localStorage.getItem("tfa_enabled")
+  );
+
   if (window.localStorage.getItem("tfa_enabled") == "true") {
-    document.getElementById("2fa_enable").setAttribute("disabled", true)
-    document.getElementById("2fa_enable").textContent = "2段階認証を無効にする"
-  } else {
-    document.getElementById("2fa_enable").addEventListener("click", () => {
-      document.getElementById('2fa_dialog').showModal()
-    })
+    document.getElementById("2fa_enable").setAttribute("disabled", true);
+    document.getElementById("2fa_enable").textContent = "2段階認証を無効にする";
   }
+  document.getElementById("2fa_enable").addEventListener("click", () => {
+    document.getElementById("2fa_dialog").showModal();
+  });
 
   if (urlParams.get("email-verify") == 1) {
     sendEmailVerification(auth.currentUser).then(() => {
@@ -202,7 +208,7 @@ onAuthStateChanged(auth, (user) => {
   });
 
   tfa_submit.addEventListener("click", () => {
-    window.localStorage.setItem("tfa_enabled", true)
+    window.localStorage.setItem("tfa_enabled", true);
     const cred = PhoneAuthProvider.credential(
       tfa_verificationid,
       tfa_verificationcode.value
