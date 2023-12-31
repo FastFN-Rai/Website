@@ -47,6 +47,7 @@ signin.onclick = () => {
         window.sessionStorage.setItem("password", password.value);
         window.location.href = "/auth/tfa-auth.html"
       } else {
+        console.log(errorCode)
         errormessage.textContent = `エラー: ${errorContent}`;
       }
     });
