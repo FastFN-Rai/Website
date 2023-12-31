@@ -47,7 +47,9 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("2fa_enable").setAttribute("disabled", true)
     document.getElementById("2fa_enable").textContent = "2段階認証を無効にする"
   } else {
-    document.getElementById("2fa_enable").addEventListener("click", document.getElementById('2fa_dialog').showModal())
+    document.getElementById("2fa_enable").addEventListener("click", () => {
+      document.getElementById('2fa_dialog').showModal()
+    })
   }
 
   if (urlParams.get("email-verify") == 1) {
