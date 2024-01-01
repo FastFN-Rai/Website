@@ -1,80 +1,107 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!--meta-->
+    <title>連絡 - 雷さんのサイト</title>
+
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="雷さんやUpLauncherに連絡する方法が書いてあるページです。"
+    />
     <link rel="canonical" href="https://rai.uplauncher.xyz/" />
-    <link rel="icon" href="/favicon.ico" />
 
-    <script src="/menu/setup.js" type="module"></script>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+    <meta content="連絡 - 雷さんのサイト" property="og:title" />
+    <meta
+      content="雷さんやUpLauncherに連絡する方法が書いてあるページです。"
+      property="og:description"
+    />
+    <meta content="https://rai.uplauncher.xyz" property="og:url" />
+    <meta
+      content="https://rai.uplauncher.xyz/images/profile-image.png"
+      property="og:image"
+    />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
 
-    <title>連絡 - 雷さんのサイト</title>
+    <!--Stylesheet-->
     <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
+
+    <!--favicon-->
+    <link rel="icon" href="/images/profile-image.png" />
+
+    <!--JavaScript-->
+    <script src="/menu/setup.js" type="module"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
   </head>
 
   <body>
     <header></header>
 
-      <div class="content has-text-centered">
-        <h1>コンタクトページ</h1>
-        <p>
-          雷に連絡したい場合は、ここに書いてある連絡先に連絡してください。<br />
-        </p>
+    <div class="content has-text-centered">
+      <h1>コンタクトページ</h1>
+      <p>
+        雷に連絡したい場合は、ここに書いてある連絡先に連絡してください。<br />
+      </p>
 
-        <h2>Discord</h2>
-        <p>まずは、Discordのサーバーへ参加してください。</p>
-        <a href="https://discord.gg/PqUbFf7fyt" class="button is-primary"
-          >サーバーに参加する</a
-        >
+      <h2>Discord</h2>
+      <p>まずは、Discordのサーバーへ参加してください。</p>
+      <a href="https://discord.gg/PqUbFf7fyt" class="button is-primary"
+        >サーバーに参加する</a
+      >
 
-        <div class="list-grid">
-          <ul>
-            <li>
-              雷さんのサービスの場合は、専用のサポートフォーラムを使用してください。
-            </li>
-            <li>
-              それ以外の連絡は、サポートと質問フォーラムで行ってください。
-            </li>
-            <li>
-              プライベートな連絡がしたい場合、チケットを作成してください。
-            </li>
-          </ul>
-        </div>
-
-        <h2>X</h2>
-        <p>Xの場合は、ダイレクトメッセージを送信してください。</p>
-        <a href="https://x.com/raidesuuu" class="button is-link"
-          >Xのプロフィール
-        </a>
-
-        <div class="list-grid">
-          <ul>
-            <li>
-              フォローして、フォロバを待ってください。(フォロバ規約も読んでください)
-            </li>
-            <li>Xの場合は、反応が遅い場合があります。ご了承ください。</li>
-          </ul>
-        </div>
-
-        <h2>メール</h2>
-        <p id="contactMail">
-          メールアプリでメールを送信してください。<br />
-          メールアドレス: (スパム対策のため、Captchaを突破してください。)</p>
-        </p>
-        <button id="displayCaptcha" class="button is-primary">
-          Captchaを表示</button
-        ><br /><br />
-
-        <div id="turnstile"></div>
-
-        <p>
-          CaptchaはCloudflareにより提供されている「Turnstile」を使用しています。<br /><a
-            href="https://www.cloudflare.com/privacypolicy/"
-            >プライバシーポリシー。</a
-          >
-        </p>
+      <div class="list-grid">
+        <ul>
+          <li>
+            雷さんのサービスの場合は、専用のサポートフォーラムを使用してください。
+          </li>
+          <li>それ以外の連絡は、サポートと質問フォーラムで行ってください。</li>
+          <li>プライベートな連絡がしたい場合、チケットを作成してください。</li>
+        </ul>
       </div>
+
+      <h2>X</h2>
+      <p>Xの場合は、ダイレクトメッセージを送信してください。</p>
+      <a href="https://x.com/raidesuuu" class="button is-link"
+        >Xのプロフィール
+      </a>
+
+      <div class="list-grid">
+        <ul>
+          <li>
+            フォローして、フォロバを待ってください。(フォロバ規約も読んでください)
+          </li>
+          <li>Xの場合は、反応が遅い場合があります。ご了承ください。</li>
+        </ul>
+      </div>
+
+      <h2>メール</h2>
+      <p id="contactMail">
+        メールアプリでメールを送信してください。<br />
+        メールアドレス: (スパム対策のため、Captchaを突破してください。)
+      </p>
+      <button id="displayCaptcha" class="button is-primary">
+        Captchaを表示</button
+      ><br /><br />
+
+      <div id="turnstile"></div>
+
+      <p>
+        CaptchaはCloudflareにより提供されている「Turnstile」を使用しています。<br /><a
+          href="https://www.cloudflare.com/privacypolicy/"
+          >プライバシーポリシー。</a
+        >
+      </p>
+    </div>
 
     <script src="/js/firebase.js" type="module"></script>
 
@@ -83,7 +110,12 @@
         turnstile.render("#turnstile", {
           sitekey: "0x4AAAAAAACYWAGYl5B5l4E9",
           callback: function (token) {
-            document.querySelector("#contactMail").innerHTML = document.querySelector("#contactMail").innerHTML.replace("(スパム対策のため、Captchaを突破してください。)", "admin@uplauncher.xyz")
+            document.querySelector("#contactMail").innerHTML = document
+              .querySelector("#contactMail")
+              .innerHTML.replace(
+                "(スパム対策のため、Captchaを突破してください。)",
+                "admin@uplauncher.xyz"
+              );
           },
         });
       };

@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!--meta-->
+    <title>エイプリルフールまで - 雷さんのサイト</title>
+
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="雷さんのサイトへようこそ！" />
+    <meta
+      name="description"
+      content="エイプリルフールまでのカウントダウンです。"
+    />
     <link rel="canonical" href="https://rai.uplauncher.xyz/" />
+
+    <meta content="連絡 - 雷さんのサイト" property="og:title" />
+    <meta
+      content="エイプリルフールまでのカウントダウンです。"
+      property="og:description"
+    />
+    <meta content="https://rai.uplauncher.xyz" property="og:url" />
+    <meta
+      content="https://rai.uplauncher.xyz/images/profile-image.png"
+      property="og:image"
+    />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="/css/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
     />
-    <link rel="icon" href="/favicon.ico" />
+
+    <!--favicon-->
+    <link rel="icon" href="/images/profile-image.png" />
+
+    <!--JavaScript-->
     <script src="/menu/setup.js" type="module"></script>
-    <title>エイプリルフール | 雷さんのサイト</title>
-    <link rel="stylesheet" href="/css/index.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -27,8 +55,11 @@
     <div class="content has-text-centered">
       <h1>エイプリルフールまで</h1>
       <p>
-        このページはベータ版です。カウントダウンの練習をするために作りました。
+        このページはベータ版です。カウントダウンの練習をするために作りました。<br />
+        最終更新: 2024/01/01 (version 1.0)
       </p>
+
+      <h2 id="aprilfools-alert">あと〇日。</h2>
 
       <span id="day"></span>日 <span id="hour"></span>時間
       <span id="min"></span>分 <span id="sec"></span>秒
@@ -39,15 +70,13 @@
     <script>
       function countdown() {
         const now = new Date();
-        var date = new Date(now.getFullYear(), 4, 1, 0, 0, 0);
+        let date = new Date(2024, 3, 1, 0, 0, 0);
 
-        const fkdiffer = date.getTime() - now.getTime();
-        const fksec = Math.floor(fkdiffer / 1000) % 60;
+        let fkdiffer = date.getTime() - now.getTime();
+        let fksec = Math.floor(fkdiffer / 1000) % 60;
+        let differ = date.getTime() - now.getTime();
 
-        if (Math.sign(fksec) == -1) {
-          date = new Date(now.getFullYear() + 1, 4, 1, 0, 0, 0);
-        }
-        const differ = date.getTime() - now.getTime();
+        fkdiffer = 0;
 
         const sec = Math.floor(differ / 1000) % 60;
         const min = Math.floor(differ / 1000 / 60) % 60;
@@ -70,6 +99,45 @@
           2,
           "0"
         );
+
+        if (day != 0) {
+          document.getElementById(
+            "aprilfools-alert"
+          ).textContent = `あと${day}日！`;
+        } else if (hour != 0) {
+          if (35 < min) {
+            document.getElementById("aprilfools-alert").textContent = `あと${
+              hour + 1
+            }時間！`;
+          } else {
+            document.getElementById(
+              "aprilfools-alert"
+            ).textContent = `あと${hour}時間！`;
+          }
+        } else if (min != 0) {
+          document.getElementById(
+            "aprilfools-alert"
+          ).textContent = `あと${min}分！`;
+        } else {
+          document.getElementById(
+            "aprilfools-alert"
+          ).textContent = `あと${sec}秒！`;
+        }
+
+        if (Math.sign(fksec) == -1) {
+          console.log(fkdiffer);
+          document.getElementById("aprilfools-alert").textContent =
+            "2025年になりました！";
+          document.querySelectorAll(".c-firework").forEach((container) => {
+            console.log(container);
+            container.style.display = "";
+          });
+          document.getElementById("day").innerHTML = "0";
+          document.getElementById("hour").textContent = "0";
+          document.getElementById("min").textContent = "0";
+          document.getElementById("sec").textContent = "0";
+          return;
+        }
         setTimeout(countdown, 1000);
       }
       countdown();
