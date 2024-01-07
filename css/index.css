@@ -96,20 +96,25 @@ body {
 }
 
 /* List */
-.list-grid {
+.center-left {
   text-align: center;
 }
-.list-grid ol {
+.center-left ol {
   text-align: left;
   display: inline-block;
 }
-.list-grid ul {
+.center-left ul {
   text-align: left;
   display: inline-block;
 }
-.list-grid p {
+.center-left p {
   text-align: left;
   display: inline-block;
+}
+
+.info-text {
+  width: 50%;
+  margin: auto;
 }
 
 .tooltip-button:hover .tooltip-text {
