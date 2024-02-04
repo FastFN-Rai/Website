@@ -1,4 +1,4 @@
 user-agent: *
 disallow: /auth/
 
-sitemap: https://rai.uplauncher.xyz/sitemap.xml
+sitemap: https://uplauncher.xyz/sitemap.xml
