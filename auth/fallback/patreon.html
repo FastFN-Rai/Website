@@ -29,7 +29,7 @@
           {
             mode: "no-cors",
             headers: {
-              "Authorization": "Bearer " + location.href.split("?")[0],
+              "Authorization": "Bearer " + window.location.href.split("?")[1].split("=")[1].split("&")[0],
             },
           }
         ).then(async (res) => {
