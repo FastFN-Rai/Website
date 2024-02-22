@@ -41,7 +41,33 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3326621014935824"
       crossorigin="anonymous"
     ></script>
-<script async src="https://fundingchoicesmessages.google.com/i/pub-3326621014935824?ers=1" nonce="JjY3TpBm7adUKnc_0D6PlA"></script><script nonce="JjY3TpBm7adUKnc_0D6PlA">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    <script
+      async
+      src="https://fundingchoicesmessages.google.com/i/pub-3326621014935824?ers=1"
+      nonce="JjY3TpBm7adUKnc_0D6PlA"
+    ></script>
+    <script nonce="JjY3TpBm7adUKnc_0D6PlA">
+      (function () {
+        function signalGooglefcPresent() {
+          if (!window.frames["googlefcPresent"]) {
+            if (document.body) {
+              const iframe = document.createElement("iframe");
+              iframe.style =
+                "width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;";
+              iframe.style.display = "none";
+              iframe.name = "googlefcPresent";
+              document.body.appendChild(iframe);
+            } else {
+              setTimeout(signalGooglefcPresent, 0);
+            }
+          }
+        }
+        signalGooglefcPresent();
+      })();
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
   </head>
 
   <body>
@@ -59,6 +85,15 @@
           </p>
         </div>
       </article>
+
+      <h2>Rai Chatプロフィールを管理</h2>
+      <p>Rai Chatプロフィールは、chat.uplauncher.xyzから管理してください。</p>
+      <a
+        href="https://chat.uplauncher.xyz/account/panel"
+        class="button is-primary"
+      >
+        Rai Chatに移動</a
+      >
 
       <h2>メールアドレス</h2>
       <p>メールアドレスは、アカウントにログインする際に必要です。</p>
@@ -108,6 +143,16 @@
         パスワードを変更</button
       ><br /><br />
 
+      <h4>Patreonアカウントをリンク</h4>
+      <p>
+        Patreonアカウントをリンクすると、特別な特典を利用できたり、Rai
+        Chatでチェックマークを入手できます。
+      </p>
+
+      <button class="button is-primary" id="link_patreon">
+        Patreonアカウントをリンク
+      </button>
+
       <h2>破壊的な変更</h2>
       <br />
 
@@ -126,9 +171,14 @@
 
       <article class="message is-warning">
         <div class="message-body has-text-left">
-          <p>現在、2段階認証を無効にすることはできません。無効にするには、<a href="/contact.html">連絡してください。</a>
+          <p>
+            現在、2段階認証を無効にすることはできません。無効にするには、<a
+              href="/contact.html"
+              >連絡してください。</a
+            >
+          </p>
         </div>
-      </article>    
+      </article>
 
       <h4>アカウントを削除する</h4>
       <p>

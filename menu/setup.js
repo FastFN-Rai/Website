@@ -1,1 +1,70 @@
-import{getAuth,onAuthStateChanged}from"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u0077\u0077\u0077\u002e\u0067\u0073\u0074\u0061\u0074\u0069\u0063\u002e\u0063\u006f\u006d\u002f\u0066\u0069\u0072\u0065\u0062\u0061\u0073\u0065\u006a\u0073\u002f\u0039\u002e\u0031\u0037\u002e\u0031\u002f\u0066\u0069\u0072\u0065\u0062\u0061\u0073\u0065\u002d\u0061\u0075\u0074\u0068\u002e\u006a\u0073";var i=0xc80c1^0xc80c1;const headerRequest=new XMLHttpRequest();headerRequest["\u006f\u0070\u0065\u006e"]("TEG".split("").reverse().join(""),"lmth.redaeh/unem/".split("").reverse().join(""),!![]);headerRequest["\u006f\u006e\u0072\u0065\u0061\u0064\u0079\u0073\u0074\u0061\u0074\u0065\u0063\u0068\u0061\u006e\u0067\u0065"]=function(){if(headerRequest["\u0072\u0065\u0061\u0064\u0079\u0053\u0074\u0061\u0074\u0065"]===(0x6c57b^0x6c57f)&&headerRequest["\u0073\u0074\u0061\u0074\u0075\u0073"]===(0x8d1b0^0x8d178)){const _0x19a9df=headerRequest["\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065\u0054\u0065\u0078\u0074"];const _0x59975b=document["\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006c\u0065\u0063\u0074\u006f\u0072"]("redaeh".split("").reverse().join(""));_0x59975b['innerHTML']=_0x19a9df;const _0x2d3721=getAuth();onAuthStateChanged(_0x2d3721,_0x49ba0b=>{if(_0x49ba0b!==null){document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("pungis".split("").reverse().join(""))["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("neddih-si".split("").reverse().join(""));document['getElementById']("ningis".split("").reverse().join(""))["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("neddih-si".split("").reverse().join(""));document['getElementById']('panel')['classList']["\u0072\u0065\u006d\u006f\u0076\u0065"]("neddih-si".split("").reverse().join(""));document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("tuogol".split("").reverse().join(""))['classList']['remove']("\u0069\u0073\u002d\u0068\u0069\u0064\u0064\u0065\u006e");document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("tuogol".split("").reverse().join(""))['addEventListener']('click',()=>{_0x2d3721["\u0073\u0069\u0067\u006e\u004f\u0075\u0074"]();});}});const _0x1e4d69=Array["\u0070\u0072\u006f\u0074\u006f\u0074\u0079\u0070\u0065"]['slice']['call'](document["\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006c\u0065\u0063\u0074\u006f\u0072\u0041\u006c\u006c"]("regrub-rabvan.".split("").reverse().join("")),0xb2a3d^0xb2a3d);_0x1e4d69['forEach'](_0x53b3ec=>{_0x53b3ec['addEventListener']("\u0063\u006c\u0069\u0063\u006b",()=>{const _0x3b54a1=_0x53b3ec['dataset']['target'];const _0x2c42f8=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"](_0x3b54a1);_0x53b3ec['classList']['toggle']("\u0069\u0073\u002d\u0061\u0063\u0074\u0069\u0076\u0065");_0x2c42f8["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]["\u0074\u006f\u0067\u0067\u006c\u0065"]('is-active');});});}};headerRequest["\u0073\u0065\u006e\u0064"]();const footerRequest=new XMLHttpRequest();footerRequest['open']('GET',"\u002f\u006d\u0065\u006e\u0075\u002f\u0066\u006f\u006f\u0074\u0065\u0072\u002e\u0068\u0074\u006d\u006c",!![]);footerRequest["\u006f\u006e\u0072\u0065\u0061\u0064\u0079\u0073\u0074\u0061\u0074\u0065\u0063\u0068\u0061\u006e\u0067\u0065"]=function(){if(footerRequest['readyState']===(0xc491c^0xc4918)&&footerRequest['status']===(0xca900^0xca9c8)){const _0x229e85=footerRequest["\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065\u0054\u0065\u0078\u0074"];const _0xbf0324=document["\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006c\u0065\u0063\u0074\u006f\u0072"]('footer');_0xbf0324["\u0069\u006e\u006e\u0065\u0072\u0048\u0054\u004d\u004c"]=_0x229e85;}};footerRequest['send']();
+import {
+  getAuth,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+
+var i = 0;
+
+//includeHeader
+const headerRequest = new XMLHttpRequest();
+headerRequest.open("GET", "/menu/header.html", true);
+headerRequest.onreadystatechange = function () {
+  if (headerRequest.readyState === 4 && headerRequest.status === 200) {
+    const response = headerRequest.responseText;
+    const element = document.querySelector("header");
+    element.innerHTML = response;
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDD_ASZ-ShngYPtumrVKM3YH67rEI6bbRc",
+      authDomain: "auth.uplauncher.xyz",
+      projectId: "e-mediator-401323",
+      storageBucket: "e-mediator-401323.appspot.com",
+      messagingSenderId: "237760903684",
+    };
+
+    var app = initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+    onAuthStateChanged(auth, (user) => {
+      if (user !== null) {
+        document.getElementById("signup").classList.add("is-hidden");
+        document.getElementById("signin").classList.add("is-hidden");
+        document.getElementById("panel").classList.remove("is-hidden");
+        document.getElementById("logout").classList.remove("is-hidden");
+
+        document.getElementById("logout").addEventListener("click", () => {
+          auth.signOut();
+        });
+      }
+    });
+
+    const $navbarBurgers = Array.prototype.slice.call(
+      document.querySelectorAll(".navbar-burger"),
+      0
+    );
+
+    $navbarBurgers.forEach((el) => {
+      el.addEventListener("click", () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        el.classList.toggle("is-active");
+        $target.classList.toggle("is-active");
+      });
+    });
+  }
+};
+headerRequest.send();
+
+//includeFooter
+const footerRequest = new XMLHttpRequest();
+footerRequest.open("GET", "/menu/footer.html", true);
+footerRequest.onreadystatechange = function () {
+  if (footerRequest.readyState === 4 && footerRequest.status === 200) {
+    const response = footerRequest.responseText;
+    const element = document.querySelector("footer");
+    element.innerHTML = response;
+  }
+};
+footerRequest.send();

@@ -1,1 +1,254 @@
-import{getAuth,onAuthStateChanged,EmailAuthProvider,PhoneAuthProvider,updateEmail,deleteUser,sendEmailVerification,PhoneMultiFactorGenerator,multiFactor,RecaptchaVerifier,reauthenticateWithCredential}from"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u0077\u0077\u0077\u002e\u0067\u0073\u0074\u0061\u0074\u0069\u0063\u002e\u0063\u006f\u006d\u002f\u0066\u0069\u0072\u0065\u0062\u0061\u0073\u0065\u006a\u0073\u002f\u0039\u002e\u0031\u0037\u002e\u0031\u002f\u0066\u0069\u0072\u0065\u0062\u0061\u0073\u0065\u002d\u0061\u0075\u0074\u0068\u002e\u006a\u0073";const auth=getAuth();let email="".split("").reverse().join("");const email_password=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("drowssap_liame".split("").reverse().join(""));const email_new=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("wen_liame".split("").reverse().join(""));const email_info=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0065\u006d\u0061\u0069\u006c\u005f\u0069\u006e\u0066\u006f");const email_submit=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("timbus_liame".split("").reverse().join(""));const password_current=document['getElementById']("tnerruc_drowssap".split("").reverse().join(""));const password_new=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]('password_new');const password_info=document['getElementById']("ofni_drowssap".split("").reverse().join(""));const password_submit=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("timbus_drowssap".split("").reverse().join(""));const tfa_password=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("drowssap_af2".split("").reverse().join(""));const tfa_phonenumber=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("rebmunenohp_af2".split("").reverse().join(""));const tfa_info=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("ofni_af2".split("").reverse().join(""));const tfa_sendcode=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("edocdnes_af2".split("").reverse().join(""));let tfa_user="";let tfa_verificationid='';const tfa_verificationcode=document['getElementById']('2fa_verificationcode');const tfa_submit=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("timbus_af2".split("").reverse().join(""));const remove_password=document['getElementById']('remove_password');const remove_info=document['getElementById']("\u0072\u0065\u006d\u006f\u0076\u0065\u005f\u0069\u006e\u0066\u006f");const remove_submit=document['getElementById']('remove_submit');onAuthStateChanged(auth,_0x35d878=>{const _0x1f1698=new URLSearchParams(window["\u006c\u006f\u0063\u0061\u0074\u0069\u006f\u006e"]['search']);console["\u006c\u006f\u0067"]('User\x20Details:\x0aEmail:\x20',_0x35d878["\u0065\u006d\u0061\u0069\u006c"]," :deifireV liamE\n".split("").reverse().join(""),_0x35d878["\u0065\u006d\u0061\u0069\u006c\u0056\u0065\u0072\u0069\u0066\u0069\u0065\u0064"]," :delbanE AF2\n".split("").reverse().join(""),window['localStorage']['getItem']('tfa_enabled'));if(window['localStorage']['getItem']("\u0074\u0066\u0061\u005f\u0065\u006e\u0061\u0062\u006c\u0065\u0064")=="eurt".split("").reverse().join("")){document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0032\u0066\u0061\u005f\u0065\u006e\u0061\u0062\u006c\u0065")["\u0073\u0065\u0074\u0041\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065"]("delbasid".split("").reverse().join(""),!![]);document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0032\u0066\u0061\u005f\u0065\u006e\u0061\u0062\u006c\u0065")['textContent']='2段階認証を無効にする';}document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0032\u0066\u0061\u005f\u0065\u006e\u0061\u0062\u006c\u0065")["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]('click',()=>{document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("golaid_af2".split("").reverse().join(""))["\u0073\u0068\u006f\u0077\u004d\u006f\u0064\u0061\u006c"]();});if(_0x1f1698['get']("\u0065\u006d\u0061\u0069\u006c\u002d\u0076\u0065\u0072\u0069\u0066\u0079")==(0xb0618^0xb0619)){sendEmailVerification(auth["\u0063\u0075\u0072\u0072\u0065\u006e\u0074\u0055\u0073\u0065\u0072"])["\u0074\u0068\u0065\u006e"](()=>{document["\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006c\u0065\u0063\u0074\u006f\u0072"]("elcitra".split("").reverse().join(""))['style']["\u0064\u0069\u0073\u0070\u006c\u0061\u0079"]="";});}email=_0x35d878['email'];email_password["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("\u0063\u0068\u0061\u006e\u0067\u0065",()=>{if(!email_password["\u0076\u0061\u006c\u0075\u0065"]==''&!email_new['value']=="".split("").reverse().join("")){email_submit['removeAttribute']('disabled');}else{email_submit["\u0073\u0065\u0074\u0041\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065"]('disabled',!![]);}});email_new["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]('change',()=>{if(!email_password['value']==''&!email_new['value']=="".split("").reverse().join("")){email_submit["\u0072\u0065\u006d\u006f\u0076\u0065\u0041\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065"]("\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064");}else{email_submit['setAttribute']('disabled',!![]);}});email_submit["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]('click',async()=>{const _0x47daab=EmailAuthProvider['credential'](_0x35d878["\u0065\u006d\u0061\u0069\u006c"],email_password);reauthenticateWithCredential(_0x35d878,_0x47daab)["\u0074\u0068\u0065\u006e"](()=>{updateEmail(_0x35d878,email_new["\u0076\u0061\u006c\u0075\u0065"])['then'](()=>{email_info['textContent']='メールアドレスを変更しました。';})['catch'](_0x47b1f8=>{email_info['textContent']=" :\u30FC\u30E9\u30A8".split("").reverse().join("")+_0x47b1f8;});})["\u0063\u0061\u0074\u0063\u0068"](_0x44c394=>{email_info['textContent']='エラー:\x20パスワードが違います。';return;});});password_submit["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("kcilc".split("").reverse().join(""),()=>{const _0x2c550a=EmailAuthProvider['credential'](_0x35d878['email'],passP["\u0076\u0061\u006c\u0075\u0065"]);reauthenticateWithCredential(_0x35d878,_0x2c550a)['then'](()=>{updatePassword(_0x35d878,passN['value'])["\u0074\u0068\u0065\u006e"](()=>{password_info["\u0074\u0065\u0078\u0074\u0043\u006f\u006e\u0074\u0065\u006e\u0074"]='パスワードが変更されました。';})["\u0063\u0061\u0074\u0063\u0068"](_0x5cd182=>{password_info["\u0074\u0065\u0078\u0074\u0043\u006f\u006e\u0074\u0065\u006e\u0074"]='エラー:\x20'+_0x5cd182;});})["\u0063\u0061\u0074\u0063\u0068"](_0x49bdc4=>{password_info["\u0074\u0065\u0078\u0074\u0043\u006f\u006e\u0074\u0065\u006e\u0074"]='エラー:\x20パスワードが違います。';return;});});password_new['addEventListener']('change',()=>{if(!password_new['value']==''&!password_current['value']==''){password_submit['removeAttribute']('disabled');}else{password_submit['setAttribute']('disabled',!![]);}});password_current["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("egnahc".split("").reverse().join(""),()=>{if(!password_new['value']==''&!password_current['value']==''){password_submit['removeAttribute']("\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064");}else{password_submit['setAttribute']('disabled',!![]);}});remove_password['addEventListener']("egnahc".split("").reverse().join(""),()=>{if(!remove_password['value']==""){remove_submit['removeAttribute']("delbasid".split("").reverse().join(""));}else{remove_submit['setAttribute']("\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064",!![]);}});remove_submit['addEventListener']("\u0063\u006c\u0069\u0063\u006b",()=>{const _0x399b35=EmailAuthProvider['credential'](email,remove_password['value']);reauthenticateWithCredential(_0x35d878,_0x399b35)['then'](()=>{deleteUser(_0x35d878)['then'](()=>{location['href']='/auth/signin.html';})['catch'](_0x1dc722=>{remove_info['textContent']=" :\u30FC\u30E9\u30A8".split("").reverse().join("")+_0x1dc722;});})['catch'](_0x20e9be=>{console["\u006c\u006f\u0067"]('Error:\x20'+_0x20e9be['message']);remove_info['textContent']='エラー:\x20パスワードが違います。';return;});});const _0x55e4d9=new RecaptchaVerifier("reniatnoc_ahctpacer".split("").reverse().join(""),{'size':'normal','callback':function(_0x1ec7fd){console['log'](_0x1ec7fd);tfa_sendcode['removeAttribute']('disabled');},'expired-callback':function(){}},auth);tfa_sendcode['addEventListener']('click',()=>{const _0x465dcc=EmailAuthProvider['credential'](email,tfa_password['value']);reauthenticateWithCredential(_0x35d878,_0x465dcc)['then'](()=>{multiFactor(_0x35d878)['getSession']()["\u0074\u0068\u0065\u006e"](function(_0x108b88){const _0x1d5116={'phoneNumber':tfa_phonenumber['value'],'session':_0x108b88};const _0x3adad0=new PhoneAuthProvider(auth);_0x3adad0['verifyPhoneNumber'](_0x1d5116,_0x55e4d9)['then'](function(_0x4447a7){tfa_verificationid=_0x4447a7;tfa_user=_0x35d878;tfa_password['setAttribute']("delbasid".split("").reverse().join(""),!![]);tfa_phonenumber['setAttribute']('disabled',!![]);tfa_sendcode['setAttribute']("delbasid".split("").reverse().join(""),!![]);tfa_verificationcode['removeAttribute']('disabled');tfa_submit['removeAttribute']("delbasid".split("").reverse().join(""));});});})['catch'](_0x58d54e=>{console["\u006c\u006f\u0067"]('Error:\x20'+_0x58d54e["\u006d\u0065\u0073\u0073\u0061\u0067\u0065"]);remove_info['textContent']='エラー:\x20パスワードが違います。';return;});});tfa_submit['addEventListener']("kcilc".split("").reverse().join(""),()=>{window['localStorage']['setItem']("\u0074\u0066\u0061\u005f\u0065\u006e\u0061\u0062\u006c\u0065\u0064",!![]);const _0x39f813=PhoneAuthProvider['credential'](tfa_verificationid,tfa_verificationcode['value']);const _0x1a3d80=PhoneMultiFactorGenerator['assertion'](_0x39f813);multiFactor(tfa_user)['enroll'](_0x1a3d80,'電話番号');tfa_info['textContent']='2段階認証を有効にしました！';});});
+import {
+  getAuth,
+  onAuthStateChanged,
+  EmailAuthProvider,
+  PhoneAuthProvider,
+  updateEmail,
+  deleteUser,
+  sendEmailVerification,
+  PhoneMultiFactorGenerator,
+  multiFactor,
+  RecaptchaVerifier,
+  reauthenticateWithCredential,
+} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+import {
+  getFirestore,
+  getDocs,
+  collection,
+} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDD_ASZ-ShngYPtumrVKM3YH67rEI6bbRc",
+  authDomain: "auth.uplauncher.xyz",
+  projectId: "e-mediator-401323",
+  storageBucket: "e-mediator-401323.appspot.com",
+  messagingSenderId: "237760903684",
+};
+
+var app = initializeApp(firebaseConfig);
+var db = getFirestore(app);
+
+const auth = getAuth(app);
+
+let email = "";
+
+const email_password = document.getElementById("email_password");
+const email_new = document.getElementById("email_new");
+const email_info = document.getElementById("email_info");
+const email_submit = document.getElementById("email_submit");
+
+const password_current = document.getElementById("password_current");
+const password_new = document.getElementById("password_new");
+const password_info = document.getElementById("password_info");
+const password_submit = document.getElementById("password_submit");
+
+const tfa_password = document.getElementById("2fa_password");
+const tfa_phonenumber = document.getElementById("2fa_phonenumber");
+const tfa_info = document.getElementById("2fa_info");
+const tfa_sendcode = document.getElementById("2fa_sendcode");
+let tfa_user = "";
+let tfa_verificationid = "";
+const tfa_verificationcode = document.getElementById("2fa_verificationcode");
+const tfa_submit = document.getElementById("2fa_submit");
+
+const remove_password = document.getElementById("remove_password");
+const remove_info = document.getElementById("remove_info");
+const remove_submit = document.getElementById("remove_submit");
+
+const linkPatreon = document.getElementById("link_patreon");
+
+onAuthStateChanged(auth, async (user) => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  console.log(
+    "User Details:\nEmail: ",
+    user.email,
+    "\nEmail Verified: ",
+    user.emailVerified,
+    "\n2FA Enabled: ",
+    window.localStorage.getItem("tfa_enabled")
+  );
+
+  if (window.localStorage.getItem("tfa_enabled") == "true") {
+    document.getElementById("2fa_enable").setAttribute("disabled", true);
+    document.getElementById("2fa_enable").textContent = "2段階認証を無効にする";
+  }
+  document.getElementById("2fa_enable").addEventListener("click", () => {
+    document.getElementById("2fa_dialog").showModal();
+  });
+
+  if (urlParams.get("email-verify") == 1) {
+    sendEmailVerification(auth.currentUser).then(() => {
+      document.querySelector("article").style.display = "";
+    });
+  }
+
+  email = user.email;
+  email_password.addEventListener("change", () => {
+    if ((!email_password.value == "") & (!email_new.value == "")) {
+      email_submit.removeAttribute("disabled");
+    } else {
+      email_submit.setAttribute("disabled", true);
+    }
+  });
+  email_new.addEventListener("change", () => {
+    if ((!email_password.value == "") & (!email_new.value == "")) {
+      email_submit.removeAttribute("disabled");
+    } else {
+      email_submit.setAttribute("disabled", true);
+    }
+  });
+  email_submit.addEventListener("click", async () => {
+    const userCredential = EmailAuthProvider.credential(
+      user.email,
+      email_password
+    );
+    reauthenticateWithCredential(user, userCredential)
+      .then(() => {
+        updateEmail(user, email_new.value)
+          .then(() => {
+            email_info.textContent = "メールアドレスを変更しました。";
+          })
+          .catch((error) => {
+            email_info.textContent = "エラー: " + error;
+          });
+      })
+      .catch((error) => {
+        email_info.textContent = "エラー: パスワードが違います。";
+        return;
+      });
+  });
+  password_submit.addEventListener("click", () => {
+    const credential = EmailAuthProvider.credential(user.email, passP.value);
+    reauthenticateWithCredential(user, credential)
+      .then(() => {
+        updatePassword(user, passN.value)
+          .then(() => {
+            password_info.textContent = "パスワードが変更されました。";
+          })
+          .catch((error) => {
+            password_info.textContent = "エラー: " + error;
+          });
+      })
+      .catch((error) => {
+        password_info.textContent = "エラー: パスワードが違います。";
+        return;
+      });
+  });
+
+  password_new.addEventListener("change", () => {
+    if ((!password_new.value == "") & (!password_current.value == "")) {
+      password_submit.removeAttribute("disabled");
+    } else {
+      password_submit.setAttribute("disabled", true);
+    }
+  });
+  password_current.addEventListener("change", () => {
+    if ((!password_new.value == "") & (!password_current.value == "")) {
+      password_submit.removeAttribute("disabled");
+    } else {
+      password_submit.setAttribute("disabled", true);
+    }
+  });
+
+  remove_password.addEventListener("change", () => {
+    if (!remove_password.value == "") {
+      remove_submit.removeAttribute("disabled");
+    } else {
+      remove_submit.setAttribute("disabled", true);
+    }
+  });
+  remove_submit.addEventListener("click", () => {
+    const credential = EmailAuthProvider.credential(
+      email,
+      remove_password.value
+    );
+    reauthenticateWithCredential(user, credential)
+      .then(() => {
+        deleteUser(user)
+          .then(() => {
+            location.href = "/auth/signin.html";
+          })
+          .catch((error) => {
+            remove_info.textContent = "エラー: " + error;
+          });
+      })
+      .catch((error) => {
+        console.log("Error: " + error.message);
+        remove_info.textContent = "エラー: パスワードが違います。";
+        return;
+      });
+  });
+
+  const recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha_container", {
+    size: "invisible",
+    callback: function (response) {
+      console.log(response);
+      tfa_sendcode.removeAttribute("disabled");
+    },
+    "expired-callback": function () {},
+  });
+
+  tfa_sendcode.addEventListener("click", () => {
+    const credential = EmailAuthProvider.credential(email, tfa_password.value);
+    reauthenticateWithCredential(user, credential)
+      .then(() => {
+        multiFactor(user)
+          .getSession()
+          .then(function (multiFactorSession) {
+            const phoneInfoOptions = {
+              phoneNumber: tfa_phonenumber.value,
+              session: multiFactorSession,
+            };
+
+            const phoneAuthProvider = new PhoneAuthProvider(auth);
+            phoneAuthProvider
+              .verifyPhoneNumber(phoneInfoOptions, recaptchaVerifier)
+              .then(function (verificationId) {
+                tfa_verificationid = verificationId;
+                tfa_user = user;
+                tfa_password.setAttribute("disabled", true);
+                tfa_phonenumber.setAttribute("disabled", true);
+                tfa_sendcode.setAttribute("disabled", true);
+                tfa_verificationcode.removeAttribute("disabled");
+                tfa_submit.removeAttribute("disabled");
+              });
+          });
+      })
+      .catch((error) => {
+        console.log("Error: " + error.message);
+        remove_info.textContent = "エラー: パスワードが違います。";
+        return;
+      });
+  });
+
+  tfa_submit.addEventListener("click", () => {
+    window.localStorage.setItem("tfa_enabled", true);
+    const cred = PhoneAuthProvider.credential(
+      tfa_verificationid,
+      tfa_verificationcode.value
+    );
+    const multiFactorAssertion = PhoneMultiFactorGenerator.assertion(cred);
+    multiFactor(tfa_user).enroll(multiFactorAssertion, "電話番号");
+
+    tfa_info.textContent = "2段階認証を有効にしました！";
+  });
+
+  const query = await getDocs(collection(db, "patreonlinkstatus-" + user.uid));
+  query
+    .forEach((doc) => {
+      if ((doc.data().linked = "true")) {
+        if (doc.data().patreon) {
+          linkPatreon.textContent = "Patreonと連携済み";
+          linkPatreon.setAttribute("disabled", true);
+        }
+      }
+    })
+
+  linkPatreon.addEventListener("click", () => {
+    location.href =
+      "https://www.patreon.com/oauth2/authorize?response_type=code&client_id=yKTcSFN-9G6eAUiu31dOcpGPaCfzhgEulQZ8B8oVgCqTuz_n1K4JPTNy5VF0wY5i&redirect_uri=http://127.0.0.1:3000/auth/fallback/patreon.html";
+  });
+});

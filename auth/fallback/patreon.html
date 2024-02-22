@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>リダイレクト中...</title>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="/js/firebase.js"></script>
+  </head>
+  <body>
+    <h1>リダイレクト中...</h1>
+    <script async defer type="module">
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+      import {
+        getFirestore,
+        addDoc,
+        collection,
+      } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+
+      const auth = getAuth();
+      const db = getFirestore();
+      onAuthStateChanged(auth, async (user) => {
+        fetch(
+          "http://patreon.com/api/oauth2/v2/campaigns/8393641/members",
+          {
+            headers: {
+              "Authorization": "Bearer " + location.href.split("?")[0],
+            },
+          }
+        ).then(async (res) => {
+          const data = res.data;
+          if (data.data.attributes.patron_status === "active_patron") {
+            const patreonLinkData = await addDoc(
+              collection(db, "patreonlinkstatus-" + user.uid),
+              {
+                linked: true,
+                is_active: true,
+              }
+            );
+            location.href = "/auth/panel.html";
+          } else {
+            const patreonLinkData = await addDoc(
+              collection(db, "patreonlinkstatus-" + user.uid),
+              {
+                linked: false,
+                is_active: false,
+              }
+            );
+
+            location.href = "/auth/panel.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

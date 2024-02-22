@@ -1,1 +1,26 @@
-import{getAuth,onAuthStateChanged}from"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u0077\u0077\u0077\u002e\u0067\u0073\u0074\u0061\u0074\u0069\u0063\u002e\u0063\u006f\u006d\u002f\u0066\u0069\u0072\u0065\u0062\u0061\u0073\u0065\u006a\u0073\u002f\u0039\u002e\u0031\u0037\u002e\u0031\u002f\u0066\u0069\u0072\u0065\u0062\u0061\u0073\u0065\u002d\u0061\u0075\u0074\u0068\u002e\u006a\u0073";const auth=getAuth();onAuthStateChanged(auth,_0x29e46a=>{if(_0x29e46a!==null){document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0065\u006d\u0061\u0069\u006c\u005f\u006e\u0065\u0077")["\u0076\u0061\u006c\u0075\u0065"]=_0x29e46a["\u0065\u006d\u0061\u0069\u006c"];}else{location["\u0068\u0072\u0065\u0066"]="\u002f\u0061\u0075\u0074\u0068\u002f\u0073\u0069\u0067\u006e\u0069\u006e\u002e\u0068\u0074\u006d\u006c";}});
+import {
+  getAuth,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDD_ASZ-ShngYPtumrVKM3YH67rEI6bbRc",
+    authDomain: "auth.uplauncher.xyz",
+    projectId: "e-mediator-401323",
+    storageBucket: "e-mediator-401323.appspot.com",
+    messagingSenderId: "237760903684"
+  };
+
+var app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+  if (user !== null) {
+    document.getElementById("email_new").value = user.email;
+  } else {
+    location.href = "/auth/signin.html";
+  }
+});
