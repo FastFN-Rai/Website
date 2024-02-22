@@ -27,15 +27,14 @@ let tfa_resolver = "";
 const tfa_submit = document.getElementById("verify_submit");
 const verificationGet = document.getElementById("verify_get");
 onAuthStateChanged(auth, (user) => {
-  const recaptchaVerifier = new RecaptchaVerifier(
+  const recaptchaVerifier = new RecaptchaVerifier(auth, 
     "verify_get",
     {
         size: "invisible",
         callback: function(response) {
             verificationGet.setAttribute("disabled", true);
         }
-    },
-    auth
+    }
   );
 
   verificationGet.addEventListener("click", () => {
