@@ -25,35 +25,45 @@
       const db = getFirestore();
       onAuthStateChanged(auth, async (user) => {
         fetch(
-          "https://patreon.com/api/oauth2/v2/campaigns/8393641/members",
+          "https://www.patreon.com/api/oauth2/token?code=" +
+            window.location.href.split("?")[1].split("=")[1].split("&")[0] +
+            "&grant_type=authorization_code&client_id=yKTcSFN-9G6eAUiu31dOcpGPaCfzhgEulQZ8B8oVgCqTuz_n1K4JPTNy5VF0wY5i&client_secret=oY6kFXPg7dVR6ybPXAYjO3z7Dq3W-8h0-kVqhOwxX2FeQEdHJqBec63FS8GRiZFr&redirect_uri=https://uplauncher.xyz/auth/fallback/patreon.html",
           {
+            method: "POST",
             mode: "no-cors",
             headers: {
-              "Authorization": "Bearer " + window.location.href.split("?")[1].split("=")[1].split("&")[0],
+              "Content-Type": "application/x-www-form-urlencoded",
             },
           }
-        ).then(async (res) => {
-          const data = res.data;
-          if (data.data.attributes.patron_status === "active_patron") {
-            const patreonLinkData = await addDoc(
-              collection(db, "patreonlinkstatus-" + user.uid),
-              {
-                linked: true,
-                is_active: true,
-              }
-            );
-            location.href = "/auth/panel.html";
-          } else {
-            const patreonLinkData = await addDoc(
-              collection(db, "patreonlinkstatus-" + user.uid),
-              {
-                linked: false,
-                is_active: false,
-              }
-            );
+        ).then(async (res2) => {
+          fetch("https://patreon.com/api/oauth2/v2/campaigns/8393641/members", {
+            mode: "no-cors",
+            headers: {
+              Authorization: "Bearer " + res2.data.access_token,
+            },
+          }).then(async (res) => {
+            const data = res.data;
+            if (data.data.attributes.patron_status === "active_patron") {
+              const patreonLinkData = await addDoc(
+                collection(db, "patreonlinkstatus-" + user.uid),
+                {
+                  linked: true,
+                  is_active: true,
+                }
+              );
+              location.href = "/auth/panel.html";
+            } else {
+              const patreonLinkData = await addDoc(
+                collection(db, "patreonlinkstatus-" + user.uid),
+                {
+                  linked: false,
+                  is_active: false,
+                }
+              );
 
-            location.href = "/auth/panel.html";
-          }
+              location.href = "/auth/panel.html";
+            }
+          });
         });
       });
     </script>
