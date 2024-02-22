@@ -25,7 +25,7 @@
       const db = getFirestore();
       onAuthStateChanged(auth, async (user) => {
         fetch(
-          "http://patreon.com/api/oauth2/v2/campaigns/8393641/members",
+          "https://patreon.com/api/oauth2/v2/campaigns/8393641/members",
           {
             headers: {
               "Authorization": "Bearer " + location.href.split("?")[0],

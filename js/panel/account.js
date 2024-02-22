@@ -249,6 +249,6 @@ onAuthStateChanged(auth, async (user) => {
 
   linkPatreon.addEventListener("click", () => {
     location.href =
-      "https://www.patreon.com/oauth2/authorize?response_type=code&client_id=yKTcSFN-9G6eAUiu31dOcpGPaCfzhgEulQZ8B8oVgCqTuz_n1K4JPTNy5VF0wY5i&redirect_uri=http://127.0.0.1:3000/auth/fallback/patreon.html";
+      "https://www.patreon.com/oauth2/authorize?response_type=code&client_id=yKTcSFN-9G6eAUiu31dOcpGPaCfzhgEulQZ8B8oVgCqTuz_n1K4JPTNy5VF0wY5i&redirect_uri=http://uplauncher.xyz/auth/fallback/patreon.html";
   });
 });
