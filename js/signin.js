@@ -2,7 +2,7 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 

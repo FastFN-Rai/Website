@@ -1,1 +1,94 @@
-import{getAuth,getMultiFactorResolver,PhoneAuthProvider,PhoneMultiFactorGenerator,RecaptchaVerifier,onAuthStateChanged,signInWithEmailAndPassword}from"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u0077\u0077\u0077\u002e\u0067\u0073\u0074\u0061\u0074\u0069\u0063\u002e\u0063\u006f\u006d\u002f\u0066\u0069\u0072\u0065\u0062\u0061\u0073\u0065\u006a\u0073\u002f\u0039\u002e\u0031\u0037\u002e\u0031\u002f\u0066\u0069\u0072\u0065\u0062\u0061\u0073\u0065\u002d\u0061\u0075\u0074\u0068\u002e\u006a\u0073";const auth=getAuth();const verificationCode=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("edoc_yfirev".split("").reverse().join(""));let tfa_verificationId="";let tfa_resolver="".split("").reverse().join("");const tfa_submit=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0076\u0065\u0072\u0069\u0066\u0079\u005f\u0073\u0075\u0062\u006d\u0069\u0074");const verificationGet=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("teg_yfirev".split("").reverse().join(""));onAuthStateChanged(auth,_0x523dca=>{const _0xeb76e1=new RecaptchaVerifier("\u0076\u0065\u0072\u0069\u0066\u0079\u005f\u0067\u0065\u0074",{"\u0073\u0069\u007a\u0065":'invisible','callback':function(_0x5aefae){verificationGet['setAttribute']("\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064",!![]);}},auth);verificationGet["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("kcilc".split("").reverse().join(""),()=>{signInWithEmailAndPassword(auth,window["\u0073\u0065\u0073\u0073\u0069\u006f\u006e\u0053\u0074\u006f\u0072\u0061\u0067\u0065"]['getItem']("liame".split("").reverse().join("")),window["\u0073\u0065\u0073\u0073\u0069\u006f\u006e\u0053\u0074\u006f\u0072\u0061\u0067\u0065"]["\u0067\u0065\u0074\u0049\u0074\u0065\u006d"]('password'))["\u0063\u0061\u0074\u0063\u0068"](function(_0x456ba0){if(_0x456ba0['code']=="deriuqer-htua-rotcaf-itlum/htua".split("").reverse().join("")){const _0x3f9173=getMultiFactorResolver(auth,_0x456ba0);if(_0x3f9173['hints'][0x5f79c^0x5f79c]["\u0066\u0061\u0063\u0074\u006f\u0072\u0049\u0064"]===PhoneMultiFactorGenerator['FACTOR_ID']){const _0x7535ad={"\u006d\u0075\u006c\u0074\u0069\u0046\u0061\u0063\u0074\u006f\u0072\u0048\u0069\u006e\u0074":_0x3f9173['hints'][0x3eaed^0x3eaed],'session':_0x3f9173["\u0073\u0065\u0073\u0073\u0069\u006f\u006e"]};const _0x3c32ad=new PhoneAuthProvider(auth);return _0x3c32ad["\u0076\u0065\u0072\u0069\u0066\u0079\u0050\u0068\u006f\u006e\u0065\u004e\u0075\u006d\u0062\u0065\u0072"](_0x7535ad,_0xeb76e1)['then'](function(_0x8ddfcb){tfa_verificationId=_0x8ddfcb;tfa_resolver=_0x3f9173;verificationGet['setAttribute']("delbasid".split("").reverse().join(""),!![]);tfa_submit['removeAttribute']("delbasid".split("").reverse().join(""));});}else if(_0x3f9173['hints'][selectedIndex]["\u0066\u0061\u0063\u0074\u006f\u0072\u0049\u0064"]===TotpMultiFactorGenerator["\u0046\u0041\u0043\u0054\u004f\u0052\u005f\u0049\u0044"]){}else{}}else if(_0x456ba0["\u0063\u006f\u0064\u0065"]=="drowssap-gnorw/htua".split("").reverse().join("")){window["\u006c\u006f\u0063\u0061\u0074\u0069\u006f\u006e"]['href']="lmth.xedni/htua/".split("").reverse().join("");}});});tfa_submit["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("\u0063\u006c\u0069\u0063\u006b",()=>{const _0x2951b0=PhoneAuthProvider['credential'](tfa_verificationId,verificationCode['value']);const _0x486370=PhoneMultiFactorGenerator["\u0061\u0073\u0073\u0065\u0072\u0074\u0069\u006f\u006e"](_0x2951b0);tfa_resolver["\u0072\u0065\u0073\u006f\u006c\u0076\u0065\u0053\u0069\u0067\u006e\u0049\u006e"](_0x486370)["\u0074\u0068\u0065\u006e"](_0x41de5e=>{document['querySelector']("elcitra".split("").reverse().join(""))["\u0073\u0074\u0079\u006c\u0065"]["\u0064\u0069\u0073\u0070\u006c\u0061\u0079"]="".split("").reverse().join("");window["\u0073\u0065\u0073\u0073\u0069\u006f\u006e\u0053\u0074\u006f\u0072\u0061\u0067\u0065"]["\u0063\u006c\u0065\u0061\u0072"]();window['localStorage']['setItem']("delbane_aft".split("").reverse().join(""),!![]);window['location']["\u0068\u0072\u0065\u0066"]="\u002f\u0061\u0075\u0074\u0068\u002f\u0070\u0061\u006e\u0065\u006c\u002e\u0068\u0074\u006d\u006c";});});});
+import {
+  getAuth,
+  getMultiFactorResolver,
+  PhoneAuthProvider,
+  PhoneMultiFactorGenerator,
+  RecaptchaVerifier,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDD_ASZ-ShngYPtumrVKM3YH67rEI6bbRc",
+  authDomain: "auth.uplauncher.xyz",
+  projectId: "e-mediator-401323",
+  storageBucket: "e-mediator-401323.appspot.com",
+  messagingSenderId: "237760903684",
+};
+
+var app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const verificationCode = document.getElementById("verify_code");
+let tfa_verificationId = "";
+let tfa_resolver = "";
+const tfa_submit = document.getElementById("verify_submit");
+const verificationGet = document.getElementById("verify_get");
+onAuthStateChanged(auth, (user) => {
+  const recaptchaVerifier = new RecaptchaVerifier(
+    "verify_get",
+    {
+        size: "invisible",
+        callback: function(response) {
+            verificationGet.setAttribute("disabled", true);
+        }
+    },
+    auth
+  );
+
+  verificationGet.addEventListener("click", () => {
+    signInWithEmailAndPassword(
+      auth,
+      window.sessionStorage.getItem("email"),
+      window.sessionStorage.getItem("password")
+    ).catch(function (error) {
+      if (error.code == "auth/multi-factor-auth-required") {
+        const resolver = getMultiFactorResolver(auth, error);
+        // Ask user which second factor to use.
+        if (
+          resolver.hints[0].factorId === PhoneMultiFactorGenerator.FACTOR_ID
+        ) {
+          const phoneInfoOptions = {
+            multiFactorHint: resolver.hints[0],
+            session: resolver.session,
+          };
+          const phoneAuthProvider = new PhoneAuthProvider(auth);
+          // Send SMS verification code
+          return phoneAuthProvider
+            .verifyPhoneNumber(phoneInfoOptions, recaptchaVerifier)
+            .then(function (verificationId) {
+              tfa_verificationId = verificationId;
+              tfa_resolver = resolver;
+              verificationGet.setAttribute("disabled", true)
+              tfa_submit.removeAttribute("disabled")
+            });
+        } else if (
+          resolver.hints[selectedIndex].factorId ===
+          TotpMultiFactorGenerator.FACTOR_ID
+        ) {
+          // Handle TOTP MFA.
+          // ...
+        } else {
+          // Unsupported second factor.
+        }
+      } else if (error.code == "auth/wrong-password") {
+        window.location.href = "/auth/index.html";
+      }
+    });
+  });
+
+  tfa_submit.addEventListener("click", () => {
+    // Ask user for the SMS verification code. Then:
+    const cred = PhoneAuthProvider.credential(tfa_verificationId, verificationCode.value);
+    const multiFactorAssertion = PhoneMultiFactorGenerator.assertion(cred);
+    // Complete sign-in.
+    tfa_resolver.resolveSignIn(multiFactorAssertion).then((userCredentials) => {
+        document.querySelector("article").style.display = "";
+        window.sessionStorage.clear();
+        window.localStorage.setItem("tfa_enabled", true)
+        window.location.href = "/auth/panel.html"
+    });
+  });
+});
