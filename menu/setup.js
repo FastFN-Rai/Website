@@ -15,30 +15,6 @@ headerRequest.onreadystatechange = function () {
     const element = document.querySelector("header");
     element.innerHTML = response;
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDD_ASZ-ShngYPtumrVKM3YH67rEI6bbRc",
-      authDomain: "auth.uplauncher.xyz",
-      projectId: "e-mediator-401323",
-      storageBucket: "e-mediator-401323.appspot.com",
-      messagingSenderId: "237760903684",
-    };
-
-    var app = initializeApp(firebaseConfig);
-
-    const auth = getAuth(app);
-    onAuthStateChanged(auth, (user) => {
-      if (user !== null) {
-        document.getElementById("signup").classList.add("is-hidden");
-        document.getElementById("signin").classList.add("is-hidden");
-        document.getElementById("panel").classList.remove("is-hidden");
-        document.getElementById("logout").classList.remove("is-hidden");
-
-        document.getElementById("logout").addEventListener("click", () => {
-          auth.signOut();
-        });
-      }
-    });
-
     const $navbarBurgers = Array.prototype.slice.call(
       document.querySelectorAll(".navbar-burger"),
       0
