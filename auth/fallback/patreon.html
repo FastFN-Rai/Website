@@ -24,47 +24,61 @@
       const auth = getAuth();
       const db = getFirestore();
       onAuthStateChanged(auth, async (user) => {
-        fetch(
-          "https://www.patreon.com/api/oauth2/token?code=" +
-            window.location.href.split("?")[1].split("=")[1].split("&")[0] +
-            "&grant_type=authorization_code&client_id=yKTcSFN-9G6eAUiu31dOcpGPaCfzhgEulQZ8B8oVgCqTuz_n1K4JPTNy5VF0wY5i&client_secret=oY6kFXPg7dVR6ybPXAYjO3z7Dq3W-8h0-kVqhOwxX2FeQEdHJqBec63FS8GRiZFr&redirect_uri=https://uplauncher.xyz/auth/fallback/patreon.html",
-          {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-          }
-        ).then(async (res2) => {
-          fetch("https://patreon.com/api/oauth2/v2/campaigns/8393641/members", {
-            mode: "no-cors",
-            headers: {
-              Authorization: "Bearer " + res2.data.access_token,
-            },
-          }).then(async (res) => {
-            const data = res.data;
-            if (data.data.attributes.patron_status === "active_patron") {
-              const patreonLinkData = await addDoc(
-                collection(db, "patreonlinkstatus-" + user.uid),
-                {
-                  linked: true,
-                  is_active: true,
-                }
-              );
-              location.href = "/auth/panel.html";
-            } else {
-              const patreonLinkData = await addDoc(
-                collection(db, "patreonlinkstatus-" + user.uid),
-                {
-                  linked: false,
-                  is_active: false,
-                }
-              );
+        fetch("http://35.226.102.192:3000/patreon/get-access-token", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            code: window.location.href
+              .split("?")[1]
+              .split("=")[1]
+              .split("&")[0],
+          }),
+        })
+          .then((response) => response.json())
+          .then(async (resToken) => {
+            console.info("[PATREON] Access Token:", resToken.access_token);
+            const accessToken = resToken.access_token;
 
-              location.href = "/auth/panel.html";
-            }
+            fetch("http://35.226.102.192:3000/patreon/get-user-info", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                accessToken: accessToken,
+              }),
+            }).then(async (res) => {
+              console.log(res);
+              const data = res;
+              const dataString = JSON.stringify(data);
+              if (dataString.includes("8393641") && dataString.includes("is_monthly")) {
+                console.log("Patron")
+                const patreonLinkData = await addDoc(
+                  collection(db, "patreonlinkstatus-" + user.uid),
+                  {
+                    linked: true,
+                    is_active: true,
+                    verifiedOwner: false
+                  }
+                );
+                //location.href = "/auth/panel.html";
+              } else {
+                console.log("Not a patron")
+                const patreonLinkData = await addDoc(
+                  collection(db, "patreonlinkstatus-" + user.uid),
+                  {
+                    linked: true,
+                    is_active: false,
+                    verifiedOwner: false
+                  }
+                );
+
+                //location.href = "/auth/panel.html";
+              }
+            });
           });
-        });
       });
     </script>
   </body>

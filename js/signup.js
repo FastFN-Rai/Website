@@ -36,7 +36,11 @@ window.onloadTurnstileCallback = function () {
   });
 };
 
-turnstile.ready(onloadTurnstileCallback);
+try {
+  turnstile.ready(onloadTurnstileCallback);
+} catch (error) {
+  console.error("Turnstile Error: " + error);
+}
 
 signup.addEventListener("click", () => {
   createUserWithEmailAndPassword(auth, email.value, password.value)
@@ -49,7 +53,7 @@ signup.addEventListener("click", () => {
       const errorcode = error.code;
       let errormessage = error.message;
 
-      errormessage = errormessage.replace("Firebase: Error ", "")
+      errormessage = errormessage.replace("Firebase: Error ", "");
 
       if (errorcode == "auth/email-already-in-use") {
         document.getElementById("error-mess").textContent =

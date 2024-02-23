@@ -237,18 +237,25 @@ onAuthStateChanged(auth, async (user) => {
   });
 
   const query = await getDocs(collection(db, "patreonlinkstatus-" + user.uid));
-  query
-    .forEach((doc) => {
-      if ((doc.data().linked = "true")) {
-        if (doc.data().patreon) {
-          linkPatreon.textContent = "Patreonと連携済み";
-          linkPatreon.setAttribute("disabled", true);
-        }
-      }
-    })
+  query.forEach((doc) => {
+    console.info("Document Data: ", doc.data());
+    console.info("Is Linked: ", doc.data().linked);
+    console.info("")
+    if (doc.data().linked && doc.data().is_active) {
+      linkPatreon.textContent = "Premiumはアクティブです";
+      linkPatreon.setAttribute("disabled", true);
+    } else {
+      linkPatreon.textContent = "Patreonと連携済み";
+    }
+
+    if (doc.data().verifiedOwner) {
+      linkPatreon.textContent = "オーナー権限はアクティブです";
+      linkPatreon.setAttribute("disabled", true);
+    }
+  });
 
   linkPatreon.addEventListener("click", () => {
     location.href =
-      "https://www.patreon.com/oauth2/authorize?response_type=code&client_id=yKTcSFN-9G6eAUiu31dOcpGPaCfzhgEulQZ8B8oVgCqTuz_n1K4JPTNy5VF0wY5i&redirect_uri=http://uplauncher.xyz/auth/fallback/patreon.html";
+      "https://www.patreon.com/oauth2/authorize?response_type=code&client_id=yKTcSFN-9G6eAUiu31dOcpGPaCfzhgEulQZ8B8oVgCqTuz_n1K4JPTNy5VF0wY5i&redirect_uri=http://127.0.0.1:3000/auth/fallback/patreon.html&scope=identity";
   });
 });
